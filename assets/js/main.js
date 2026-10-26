@@ -1,11 +1,53 @@
 /**
  * Hanqi Huang (黄瀚祺) - Personal Website JavaScript
+ * Supports: Theme Toggle (Dark/Light), Language Switcher (EN default, ZH optional),
+ * Mobile Navigation, BibTeX Copy, and Project Category Filtering.
  */
 
 (function () {
   'use strict';
 
-  // 1. Theme Management (Light / Dark)
+  // ==========================================================================
+  // 1. Language Management (Default: English 'en', Optional: Chinese 'zh')
+  // ==========================================================================
+  const langToggleBtn = document.getElementById('lang-toggle');
+
+  function getSavedLanguage() {
+    // Strictly default to 'en' unless user explicitly selected 'zh'
+    return localStorage.getItem('site_lang') || 'en';
+  }
+
+  function applyLanguage(lang) {
+    document.documentElement.setAttribute('data-lang', lang);
+    document.documentElement.setAttribute('lang', lang === 'zh' ? 'zh-CN' : 'en');
+    localStorage.setItem('site_lang', lang);
+    updateLangButton(lang);
+  }
+
+  function updateLangButton(lang) {
+    if (!langToggleBtn) return;
+    const langSpan = langToggleBtn.querySelector('.lang-text');
+    if (langSpan) {
+      // In English mode, show "中文" so user knows clicking will switch to Chinese
+      // In Chinese mode, show "English" (or "EN")
+      langSpan.innerText = (lang === 'zh') ? 'EN' : '中文';
+    }
+  }
+
+  // Initialize Language immediately
+  const initialLang = getSavedLanguage();
+  applyLanguage(initialLang);
+
+  if (langToggleBtn) {
+    langToggleBtn.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-lang') || 'en';
+      applyLanguage(current === 'zh' ? 'en' : 'zh');
+    });
+  }
+
+  // ==========================================================================
+  // 2. Theme Management (Light / Dark)
+  // ==========================================================================
   const themeToggleBtn = document.getElementById('theme-toggle');
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
@@ -23,7 +65,6 @@
     const iconSpan = document.getElementById('theme-icon');
     if (!iconSpan) return;
     if (theme === 'dark') {
-      // Show sun icon when in dark mode to switch back to light
       iconSpan.innerHTML = `
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="5"></circle>
@@ -38,7 +79,6 @@
         </svg>
       `;
     } else {
-      // Show moon icon when in light mode
       iconSpan.innerHTML = `
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
@@ -64,12 +104,15 @@
     }
   });
 
-  // 2. Mobile Menu Toggle
+  // ==========================================================================
+  // 3. Mobile Menu Toggle
+  // ==========================================================================
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const navLinks = document.getElementById('nav-links');
 
   if (mobileMenuBtn && navLinks) {
-    mobileMenuBtn.addEventListener('click', () => {
+    mobileMenuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
       navLinks.classList.toggle('show');
     });
 
@@ -79,9 +122,18 @@
         navLinks.classList.remove('show');
       }
     });
+
+    // Close when clicking any nav link
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('show');
+      });
+    });
   }
 
-  // 3. Highlight Active Navigation
+  // ==========================================================================
+  // 4. Highlight Active Navigation
+  // ==========================================================================
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
   const navItems = document.querySelectorAll('.nav-link a');
   navItems.forEach(link => {
@@ -91,7 +143,9 @@
     }
   });
 
-  // 4. BibTeX Copy to Clipboard
+  // ==========================================================================
+  // 5. BibTeX Copy to Clipboard
+  // ==========================================================================
   window.copyBibtex = function (id) {
     const el = document.getElementById(id);
     if (!el) return;
@@ -99,7 +153,7 @@
     navigator.clipboard.writeText(text).then(() => {
       const btn = event.target;
       const original = btn.innerText;
-      btn.innerText = 'Copied!';
+      btn.innerText = (document.documentElement.getAttribute('data-lang') === 'zh') ? '已复制！' : 'Copied!';
       btn.style.color = 'var(--primary)';
       setTimeout(() => {
         btn.innerText = original;
@@ -110,7 +164,9 @@
     });
   };
 
-  // 5. Project Filter Tabs (on projects.html)
+  // ==========================================================================
+  // 6. Project Filter Tabs (on projects.html)
+  // ==========================================================================
   const filterBtns = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card[data-category]');
 

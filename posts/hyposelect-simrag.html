@@ -1,11 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HypoSelectSimRAG Deep Dive | Hanqi Huang</title>
   <meta name="description" content="Technical walkthrough of HypoSelectSimRAG published in IEEE ICCEIC 2025 by Hanqi Huang and co-authors.">
   <link rel="icon" type="image/jpeg" href="../assets/images/avatar.jpg">
+
+  <!-- Prevent flash of unstyled theme or language -->
+  <script>
+    (function() {
+      var savedLang = localStorage.getItem('site_lang') || 'en';
+      document.documentElement.setAttribute('data-lang', savedLang);
+      document.documentElement.setAttribute('lang', savedLang === 'zh' ? 'zh-CN' : 'en');
+      var savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
@@ -25,32 +37,53 @@
         </div>
       </a>
 
-      <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle navigation menu">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-      </button>
-
+      <!-- Navigation Links -->
       <ul class="nav-links" id="nav-links">
-        <li class="nav-link"><a href="../index.html">Home</a></li>
-        <li class="nav-link"><a href="../about.html">About</a></li>
-        <li class="nav-link"><a href="../projects.html">Projects</a></li>
-        <li class="nav-link"><a href="../publications.html">Publications</a></li>
-        <li class="nav-link active"><a href="../posts.html">Posts</a></li>
-        <li class="nav-link"><a href="../assets/docs/HUANG_Hanqi_CV.pdf" target="_blank">CV</a></li>
-        <li>
-          <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
-            <span id="theme-icon"></span>
-          </button>
+        <li class="nav-link"><a href="../index.html">
+          <span class="lang-en">Home</span><span class="lang-zh">首页</span>
+        </a></li>
+        <li class="nav-link"><a href="../about.html">
+          <span class="lang-en">About</span><span class="lang-zh">关于我</span>
+        </a></li>
+        <li class="nav-link"><a href="../projects.html">
+          <span class="lang-en">Projects</span><span class="lang-zh">精选项目</span>
+        </a></li>
+        <li class="nav-link"><a href="../publications.html">
+          <span class="lang-en">Publications</span><span class="lang-zh">学术成果</span>
+        </a></li>
+        <li class="nav-link active"><a href="../posts.html">
+          <span class="lang-en">Posts</span><span class="lang-zh">文章笔记</span>
+        </a></li>
+        <li class="nav-link">
+          <a href="../assets/docs/HUANG_Hanqi_CV.pdf" target="_blank" class="lang-en">CV</a>
+          <a href="../assets/docs/HUANG_Hanqi_CV_CN.pdf" target="_blank" class="lang-zh">中文简历</a>
         </li>
       </ul>
+
+      <!-- Action buttons -->
+      <div class="nav-actions">
+        <button id="lang-toggle" class="nav-btn lang-toggle-btn" aria-label="Switch Language" title="Switch English / 中文">
+          <span class="lang-text">中文</span>
+        </button>
+        <button id="theme-toggle" class="nav-btn theme-toggle-btn" aria-label="Toggle dark mode">
+          <span id="theme-icon"></span>
+        </button>
+        <button id="mobile-menu-btn" class="nav-btn mobile-menu-btn" aria-label="Toggle navigation menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
     </div>
   </header>
 
   <!-- Article Container -->
-  <main class="container" style="padding-top: 2.5rem; padding-bottom: 5rem;">
+  <main class="container" style="padding-top: 2rem; padding-bottom: 5rem;">
     <div class="article-content">
       
       <div style="margin-bottom: 1.5rem;">
-        <a href="../posts.html" style="font-size:0.9rem; font-weight:600;">&larr; Back to all posts</a>
+        <a href="../posts.html" style="font-size:0.9rem; font-weight:600;">
+          <span class="lang-en">&larr; Back to all posts</span>
+          <span class="lang-zh">&larr; 返回所有文章</span>
+        </a>
       </div>
 
       <header class="article-header" style="padding-top: 0;">
@@ -63,7 +96,7 @@
         </div>
         <h1 class="article-title">HypoSelectSimRAG: Enhancing Answer Accuracy in RAG via Multi-Path Self-Consistent Query Translation</h1>
         <p style="font-size: 1.05rem; color: var(--text-light); font-style: italic;">
-          By Zhi Chen, <strong>Hanqi Huang</strong>, Junjie Wu, et al.
+          By Zhi Chen, <strong>Hanqi Huang (黄瀚祺)</strong>, Junjie Wu, et al.
         </p>
       </header>
 
@@ -91,8 +124,9 @@
           We evaluated the framework on the standardized <code>rag-dataset-1200</code> benchmark using <strong>RAGAS</strong> (Retrieval Augmented Generation Assessment) across Factual Correctness, Answer Semantic Similarity, and Context Relevance.
         </p>
 
-        <div style="overflow-x: auto; margin: 1.5rem 0;">
-          <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem; text-align: left; background: var(--card-bg); border-radius: 8px; border: 1px solid var(--border-color);">
+        <!-- Mobile Safe Table Container -->
+        <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1.5rem 0; width: 100%;">
+          <table style="width: 100%; min-width: 500px; border-collapse: collapse; font-size: 0.92rem; text-align: left; background: var(--card-bg); border-radius: 8px; border: 1px solid var(--border-color);">
             <thead>
               <tr style="border-bottom: 2px solid var(--border-color); background: var(--card-subtle);">
                 <th style="padding: 10px 14px;">Method</th>
@@ -132,13 +166,10 @@
         <p>
           The pipeline was implemented using Python and the <strong>LangChain</strong> framework, monitored through <strong>LangSmith</strong> for token tracing, and validated on extensive test sets.
         </p>
-        <p>
-          The full research paper is published in IEEE:
-        </p>
-        <p>
+        <div style="display:flex; flex-wrap:wrap; gap:0.6rem; margin-top:1.5rem;">
           <a href="https://doi.org/10.1109/ICCEIC67916.2025.11309165" target="_blank" class="btn btn-primary">IEEE Publication Link</a>
-          <a href="../assets/docs/HypoSelectSimRAG_Paper.pdf" target="_blank" class="btn btn-outline" style="margin-left: 0.5rem;">Download Paper (PDF)</a>
-        </p>
+          <a href="../assets/docs/HypoSelectSimRAG_Paper.pdf" target="_blank" class="btn btn-outline">Download Paper (PDF)</a>
+        </div>
       </article>
 
     </div>
@@ -153,8 +184,11 @@
       <div class="footer-links">
         <a href="https://github.com/Hanson5732" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="mailto:huanghanqi1123@163.com">Email</a>
-        <a href="../about.html">About</a>
-        <a href="../assets/docs/HUANG_Hanqi_CV.pdf" target="_blank">CV</a>
+        <a href="../about.html">
+          <span class="lang-en">About</span><span class="lang-zh">关于</span>
+        </a>
+        <a href="../assets/docs/HUANG_Hanqi_CV.pdf" target="_blank" class="lang-en">CV</a>
+        <a href="../assets/docs/HUANG_Hanqi_CV_CN.pdf" target="_blank" class="lang-zh">中文简历</a>
       </div>
     </div>
   </footer>
