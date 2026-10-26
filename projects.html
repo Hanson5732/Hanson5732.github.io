@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects & Research | Hanqi Huang (黄瀚祺)</title>
+  <meta name="description" content="Projects and Research Portfolio of Hanqi Huang (黄瀚祺) - AI, LLMs, Materials Informatics, and Full-Stack Engineering.">
+  <link rel="icon" type="image/jpeg" href="assets/images/avatar.jpg">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container site-nav">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/images/avatar.jpg" alt="Hanqi Huang" class="nav-avatar">
+        <div class="nav-title-group">
+          <span class="nav-name">Hanqi Huang</span>
+          <span class="nav-sub">黄瀚祺 · HKU CS</span>
+        </div>
+      </a>
+
+      <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle navigation menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li class="nav-link"><a href="index.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg> Home</a></li>
+        <li class="nav-link"><a href="about.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> About</a></li>
+        <li class="nav-link"><a href="projects.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg> Projects</a></li>
+        <li class="nav-link"><a href="publications.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg> Publications</a></li>
+        <li class="nav-link"><a href="posts.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> Posts</a></li>
+        <li class="nav-link"><a href="assets/docs/HUANG_Hanqi_CV.pdf" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> CV</a></li>
+        <li>
+          <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+            <span id="theme-icon"></span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Content Section -->
+  <main class="container" style="padding-top: 2.5rem; padding-bottom: 4rem;">
+    <div style="margin-bottom: 2rem;">
+      <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Projects & Research</h1>
+      <p style="color: var(--text-muted); font-size: 1.05rem;">
+        A showcase of independent and collaborative research projects spanning LLMs, graph neural networks, scientific computing, and enterprise full-stack software.
+      </p>
+
+      <!-- Category Filter Buttons -->
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1.25rem;">
+        <button class="btn btn-primary filter-btn" data-filter="all">All Projects</button>
+        <button class="btn btn-outline filter-btn" data-filter="ai-llm">AI & LLMs</button>
+        <button class="btn btn-outline filter-btn" data-filter="materials-ml">Materials Informatics & HPC</button>
+        <button class="btn btn-outline filter-btn" data-filter="fullstack">Full-Stack & Systems</button>
+      </div>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="projects-grid">
+      
+      <!-- Project 1: Materials ML -->
+      <div class="project-card" data-category="materials-ml">
+        <div class="project-category">Materials Informatics · Final Year Project</div>
+        <h3>High-Throughput DFT & ML for Materials Properties</h3>
+        <span class="project-time">2025.08 - 2026.04 · Macao Polytechnic University</span>
+        <p class="project-desc">
+          Constructed an automated high-throughput first-principles (DFT) pipeline with VASP and Pymatgen on an ArchLinux supercomputing cluster. Extracted 2,598 structural candidates of Perovskite and Heusler alloys. Compared Crystal Graph Convolutional Neural Networks (CGCNN) with tabular tree models: CGCNN achieved an $R^2 = 0.9635$ on Fermi Level and $R^2 = 0.9584$ on Band Gap, revealing global lattice topology principles.
+        </p>
+        <div class="project-tags">
+          <span class="tag">PyTorch</span>
+          <span class="tag">CGCNN</span>
+          <span class="tag">VASP / DFT</span>
+          <span class="tag">Pymatgen</span>
+          <span class="tag">Supercomputing</span>
+          <span class="tag">XGBoost</span>
+        </div>
+        <div class="project-links">
+          <a href="assets/docs/Materials_ML_Paper.pdf" target="_blank" class="btn btn-outline" style="padding: 4px 10px; font-size: 0.82rem;">Paper (PDF)</a>
+          <a href="posts/materials-ml-cgcnn.html" class="btn btn-outline" style="padding: 4px 10px; font-size: 0.82rem;">Case Study</a>
+        </div>
+      </div>
+
+      <!-- Project 2: HypoSelectSimRAG -->
+      <div class="project-card" data-category="ai-llm">
+        <div class="project-category">AI & LLMs · Academic Publication</div>
+        <h3>HypoSelectSimRAG: Multi-Path Self-Consistent Query Translation</h3>
+        <span class="project-time">2025.03 - 2025.08 · Published at IEEE ICCEIC 2025</span>
+        <p class="project-desc">
+          Designed a novel RAG pipeline to alleviate retrieval hallucinations. Generates diverse hypothetical documents across 4 distinct temperature-guided paths (0.1 / 1.1) and selects the optimal document through query-cosine similarity voting. Evaluated with LangSmith and Ragas on rag-dataset-1200, achieving a Factual Correctness of 0.6910 (vs 0.5257 standard RAG).
+        </p>
+        <div class="project-tags">
+          <span class="tag">LangChain</span>
+          <span class="tag">LangSmith</span>
+          <span class="tag">Ragas</span>
+          <span class="tag">LLM Prompting</span>
+          <span class="tag">IEEE Xplore</span>
+        </div>
+        <div class="project-links">
+          <a href="https://doi.org/10.1109/ICCEIC67916.2025.11309165" target="_blank" class="btn btn-outline" style="padding: 4px 10px; font-size: 0.82rem;">IEEE Link</a>
+          <a href="assets/docs/HypoSelectSimRAG_Paper.pdf" target="_blank" class="btn btn-outline" style="padding: 4px 10px; font-size: 0.82rem;">Full Paper</a>
+          <a href="posts/hyposelect-simrag.html" class="btn btn-outline" style="padding: 4px 10px; font-size: 0.82rem;">Deep Dive</a>
+        </div>
+      </div>
+
+      <!-- Project 3: AI Glass Factory -->
+      <div class="project-card" data-category="ai-llm fullstack">
+        <div class="project-category">Industrial AI & Full-Stack</div>
+        <h3>Glass Factory Intelligent AI Order Form System</h3>
+        <span class="project-time">2025.06 - 2025.08 · Dayan Data Tech</span>
+        <p class="project-desc">
+          Architected a factory-tailored document automation pipeline handling order invoices from 8+ manufacturers. Deployed an on-premise private Dify knowledge base with custom Few-Shot + Chain-of-Thought (CoT) prompting to parse obscure industry specifications into normalized relational tables, boosting human order processing speed by 87.5%.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Flask</span>
+          <span class="tag">Dify Platform</span>
+          <span class="tag">DeepSeek LLM</span>
+          <span class="tag">pdfplumber</span>
+          <span class="tag">Few-Shot CoT</span>
+        </div>
+        <div class="project-links">
+          <a href="about.html#internships" class="btn btn-outline" style="padding: 4px 10px; font-size: 0.82rem;">Details in CV</a>
+        </div>
+      </div>
+
+      <!-- Project 4: Green Banking -->
+      <div class="project-card" data-category="fullstack">
+        <div class="project-category">Full-Stack & Systems</div>
+        <h3>Enterprise Green Banking Whitelist & Audit System</h3>
+        <span class="project-time">2026.07 - 2026.08 · Shunde Rural Commercial Bank</span>
+        <p class="project-desc">
+          Developed the core data pipeline and admin portal for green finance validation. Implemented EasyExcel streaming ingestion to prevent server OOM exceptions on hundred-megabyte spreadsheets, tuned SQL execution plans with multi-column composite indices, and configured Spring Task jobs for reliable OSS file synchronization.
+        </p>
+        <div class="project-tags">
+          <span class="tag">React</span>
+          <span class="tag">Ant Design</span>
+          <span class="tag">SOFABoot</span>
+          <span class="tag">Redis</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">Alibaba OSS</span>
+        </div>
+        <div class="project-links">
+          <a href="about.html#internships" class="btn btn-outline" style="padding: 4px 10px; font-size: 0.82rem;">Details in CV</a>
+        </div>
+      </div>
+
+      <!-- Project 5: Foreign Trade Email Agent -->
+      <div class="project-card" data-category="ai-llm">
+        <div class="project-category">AI Agent & RAG</div>
+        <h3>Foreign Trade Intelligent Email Agent Workflow</h3>
+        <span class="project-time">2025.07 - 2025.08 · Dayan Data Tech</span>
+        <p class="project-desc">
+          Built an automated agentic customer support and quotation replying workflow on Dify. Incorporated vector-based catalog lookup with intent classification to generate polite, context-aware multilingual email drafts in real time.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Dify Agent</span>
+          <span class="tag">RAG</span>
+          <span class="tag">Prompt Engineering</span>
+          <span class="tag">Customer Automation</span>
+        </div>
+        <div class="project-links">
+          <a href="about.html#internships" class="btn btn-outline" style="padding: 4px 10px; font-size: 0.82rem;">Details in CV</a>
+        </div>
+      </div>
+
+      <!-- Project 6: E-Commerce Platform -->
+      <div class="project-card" data-category="fullstack">
+        <div class="project-category">Full-Stack Application</div>
+        <h3>Secure Vue3 + Django E-Commerce Web Platform</h3>
+        <span class="project-time">2025.01 - 2025.04 · Team Lead & Core Dev</span>
+        <p class="project-desc">
+          Led a 5-member engineering team to design and build an online shopping platform with decoupled architecture. Implemented product recommendation, cart, checkout, SimpleJWT token auth, SQL injection mitigation, and reCAPTCHA bot defense.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Vue 3</span>
+          <span class="tag">Django REST</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">SimpleJWT</span>
+          <span class="tag">reCAPTCHA</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/Hanson5732" target="_blank" class="btn btn-outline" style="padding: 4px 10px; font-size: 0.82rem;">GitHub Hanson5732</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div>
+        &copy; 2026 Hanqi Huang (黄瀚祺). Hosted on GitHub Pages.
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/Hanson5732" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:huanghanqi1123@163.com">Email</a>
+        <a href="about.html">About</a>
+        <a href="assets/docs/HUANG_Hanqi_CV.pdf" target="_blank">CV</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

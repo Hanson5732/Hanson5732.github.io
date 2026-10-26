@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Posts & Notes | Hanqi Huang (黄瀚祺)</title>
+  <meta name="description" content="Technical notes, research insights, and reflections by Hanqi Huang (黄瀚祺).">
+  <link rel="icon" type="image/jpeg" href="assets/images/avatar.jpg">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container site-nav">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/images/avatar.jpg" alt="Hanqi Huang" class="nav-avatar">
+        <div class="nav-title-group">
+          <span class="nav-name">Hanqi Huang</span>
+          <span class="nav-sub">黄瀚祺 · HKU CS</span>
+        </div>
+      </a>
+
+      <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle navigation menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li class="nav-link"><a href="index.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg> Home</a></li>
+        <li class="nav-link"><a href="about.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> About</a></li>
+        <li class="nav-link"><a href="projects.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg> Projects</a></li>
+        <li class="nav-link"><a href="publications.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg> Publications</a></li>
+        <li class="nav-link"><a href="posts.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> Posts</a></li>
+        <li class="nav-link"><a href="assets/docs/HUANG_Hanqi_CV.pdf" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> CV</a></li>
+        <li>
+          <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+            <span id="theme-icon"></span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container" style="padding-top: 2.5rem; padding-bottom: 4rem;">
+    <div style="margin-bottom: 2.5rem;">
+      <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Posts & Research Notes</h1>
+      <p style="color: var(--text-muted); font-size: 1.05rem;">
+        Reflections on AI research, high-throughput computational pipelines, software engineering, and life.
+      </p>
+    </div>
+
+    <div class="posts-list">
+      
+      <!-- Post 1 -->
+      <article class="post-item">
+        <div class="post-meta">
+          <span>2025.10.28</span>
+          <span>·</span>
+          <span>10 min read</span>
+          <span>·</span>
+          <span style="color:var(--primary); font-weight:600;">Research</span>
+        </div>
+        <h2 class="post-title">
+          <a href="posts/hyposelect-simrag.html">HypoSelectSimRAG: Enhancing Answer Accuracy in RAG via Multi-Path Self-Consistent Query Translation</a>
+        </h2>
+        <p class="post-summary">
+          A deep dive into our IEEE ICCEIC 2025 research: why standard RAG and HyDE fail on non-standardized user prompts, how multi-path diverse virtual document sampling works, and why cosine similarity voting achieves 0.6910 factual correctness on RAGAS benchmarks.
+        </p>
+        <div class="project-tags">
+          <span class="tag">RAG</span>
+          <span class="tag">LangChain</span>
+          <span class="tag">Information Retrieval</span>
+          <span class="tag">IEEE Publication</span>
+        </div>
+      </article>
+
+      <!-- Post 2 -->
+      <article class="post-item">
+        <div class="post-meta">
+          <span>2026.04.15</span>
+          <span>·</span>
+          <span>12 min read</span>
+          <span>·</span>
+          <span style="color:var(--primary); font-weight:600;">Materials Informatics</span>
+        </div>
+        <h2 class="post-title">
+          <a href="posts/materials-ml-cgcnn.html">High-Throughput DFT + CGCNN: Predicting Electronic & Thermodynamic Properties of Functional Crystals</a>
+        </h2>
+        <p class="post-summary">
+          How we constructed an automated 4-stage DFT calculation pipeline with VASP + Pymatgen on an ArchLinux supercomputing cluster, and compared Crystal Graph Convolutional Neural Networks (CGCNN) with tabular gradient boosting trees.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Graph Neural Networks</span>
+          <span class="tag">PyTorch</span>
+          <span class="tag">DFT / VASP</span>
+          <span class="tag">Supercomputing</span>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div>
+        &copy; 2026 Hanqi Huang (黄瀚祺). Hosted on GitHub Pages.
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/Hanson5732" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:huanghanqi1123@163.com">Email</a>
+        <a href="about.html">About</a>
+        <a href="assets/docs/HUANG_Hanqi_CV.pdf" target="_blank">CV</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

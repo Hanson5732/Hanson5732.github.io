@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Hanqi Huang (黄瀚祺)</title>
+  <meta name="description" content="About Hanqi Huang (黄瀚祺) - Biography, Education, Publications, Research and Experience.">
+  <link rel="icon" type="image/jpeg" href="assets/images/avatar.jpg">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- KaTeX for math formulas -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container site-nav">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/images/avatar.jpg" alt="Hanqi Huang" class="nav-avatar">
+        <div class="nav-title-group">
+          <span class="nav-name">Hanqi Huang</span>
+          <span class="nav-sub">黄瀚祺 · HKU CS</span>
+        </div>
+      </a>
+
+      <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle navigation menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li class="nav-link"><a href="index.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg> Home</a></li>
+        <li class="nav-link"><a href="about.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> About</a></li>
+        <li class="nav-link"><a href="projects.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg> Projects</a></li>
+        <li class="nav-link"><a href="publications.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg> Publications</a></li>
+        <li class="nav-link"><a href="posts.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> Posts</a></li>
+        <li class="nav-link"><a href="assets/docs/HUANG_Hanqi_CV.pdf" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> CV</a></li>
+        <li>
+          <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+            <span id="theme-icon"></span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- About Page Container with Sidebar Layout -->
+  <main class="container">
+    <div class="about-page-wrapper">
+      
+      <!-- Left Sidebar (Sticky) -->
+      <aside class="about-sidebar">
+        <div class="sidebar-content">
+          <img src="assets/images/avatar.jpg" alt="Hanqi Huang" class="sidebar-avatar">
+          <h1 class="sidebar-name">Hanqi Huang</h1>
+          <div class="sidebar-name-cn">黄瀚祺</div>
+          
+          <div class="sidebar-affiliation">
+            The University of Hong Kong<br>
+            <span style="font-size:0.82rem; color:var(--text-light);">(MSc in Computer Science)</span>
+          </div>
+
+          <div class="sidebar-location">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>Hong Kong & Macao</span>
+          </div>
+
+          <div class="sidebar-links">
+            <a href="mailto:huanghanqi1123@163.com" class="sidebar-link">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <span>huanghanqi1123@163.com</span>
+            </a>
+            <a href="https://github.com/Hanson5732" target="_blank" rel="noopener noreferrer" class="sidebar-link">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              <span>GitHub / Hanson5732</span>
+            </a>
+            <a href="https://doi.org/10.1109/ICCEIC67916.2025.11309165" target="_blank" rel="noopener noreferrer" class="sidebar-link">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+              <span>IEEE Publication (DOI)</span>
+            </a>
+            <a href="assets/docs/HUANG_Hanqi_CV.pdf" target="_blank" class="sidebar-link">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              <span>Resume / CV (English)</span>
+            </a>
+            <a href="assets/docs/HUANG_Hanqi_CV_CN.pdf" target="_blank" class="sidebar-link">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              <span>中文简历 (Chinese CV)</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Right Main Content -->
+      <main class="about-main-content">
+        
+        <!-- Bio Section -->
+        <section id="about" class="content-section">
+          <h2 class="section-title">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            About Me / 自我介绍
+          </h2>
+          <div class="about-bio">
+            <p>
+              I am an incoming graduate student in Computer Science at <strong>The University of Hong Kong (HKU)</strong>, having earned my Bachelor of Science degree in Computer Science from <strong>Macao Polytechnic University</strong> (ranked in the <strong>Top 5</strong> with a 3.67/4.0 GPA, recipient of the 2024–2025 Macao Fok Ying Tung Foundation Scholarship).
+            </p>
+            <p>
+              My academic interests lie at the intersection of <strong>Machine Learning, Information Retrieval, and High-Throughput Materials Informatics</strong>. In our recent research published in <strong>IEEE ICCEIC 2025</strong>, we designed <em>HypoSelectSimRAG</em>, mitigating retrieval hallucinations by coupling multi-path hypothetical document generation with self-consistent query alignment. In my undergraduate thesis, I developed an automated high-throughput calculation framework combining DFT and Crystal Graph Convolutional Neural Networks (CGCNN) on an ArchLinux supercomputer to predict electronic and thermodynamic material properties with high fidelity.
+            </p>
+            <div class="quote-box">
+              “我性格沉稳自律、做事讲求计划与条理。既能在超算集群上跑高通量数据与图神经网络模型，也能撰写中英文论文与架构落地文档，习惯用数据说话、以结果验证。”
+            </div>
+            <p>
+              Beyond academia and engineering, sports and music form the core rhythm of my daily life. Regular physical training keeps me composed under pressure, sharpening my patience, focus, and resilience. Whether tackling hard research questions or navigating fast-moving LLM ecosystems, I enjoy learning proactively, communicating with clarity, and delivering meaningful solutions with team partners.
+            </p>
+          </div>
+        </section>
+
+        <!-- News Section -->
+        <section id="news" class="content-section">
+          <h2 class="section-title">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+            News & Timeline
+          </h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <span class="timeline-time">2026.09 - 2027.08</span>
+              <div class="timeline-body">
+                <h3 class="timeline-heading">Enrolled at The University of Hong Kong (HKU)</h3>
+                <p>Master of Science in Computer Science (QS World Ranking #11). Completing full curriculum with high efficiency.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <span class="timeline-time">2026.07 - 2026.08</span>
+              <div class="timeline-body">
+                <h3 class="timeline-heading">Full-Stack Engineer Intern at Shunde Rural Commercial Bank</h3>
+                <p>Engineered core enterprise green banking modules using React, SOFABoot, Redis, and MySQL.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <span class="timeline-time">2025.10</span>
+              <div class="timeline-body">
+                <h3 class="timeline-heading">Paper Published in IEEE ICCEIC 2025</h3>
+                <p>Research paper <em>"HypoSelectSimRAG: Enhancing Answer Accuracy in RAG via Multi-Path Self-Consistent Query Translation"</em> indexed in IEEE Xplore.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <span class="timeline-time">2024 - 2025</span>
+              <div class="timeline-body">
+                <h3 class="timeline-heading">Macao Fok Ying Tung Foundation Scholarship</h3>
+                <p>Recognized for top academic achievement (Top 5 in Computer Science, GPA 3.67/4.0).</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <span class="timeline-time">2023.05 - 2023.08</span>
+              <div class="timeline-body">
+                <h3 class="timeline-heading">Shanghai Jiao Tong University (SJTU-UM Joint Institute)</h3>
+                <p>Completed intensive summer exchange coursework in engineering and computer science.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications" class="content-section">
+          <h2 class="section-title">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+            Publications
+          </h2>
+          
+          <div class="publication-card">
+            <div class="pub-header">
+              <h3 class="pub-title">HypoSelectSimRAG: Enhancing Answer Accuracy in RAG via Multi-Path Self-Consistent Query Translation</h3>
+              <span class="pub-badge">IEEE ICCEIC 2025</span>
+            </div>
+            <p class="pub-authors">
+              Z. Chen, <span class="pub-author-me">Hanqi Huang</span>, J. Wu, et al.
+            </p>
+            <p class="pub-venue">The 6th International Conference on Computer Engineering and Intelligent Control (ICCEIC 2025)</p>
+            <p class="pub-abstract">
+              Retrieval-Augmented Generation (RAG) suffers from hallucination when queries deviate from domain corpus distributions. We proposed a multi-path hypothetical translation mechanism combined with temperature scaling (0.1 / 1.1) and vector similarity voting. On the 1,200-sample benchmark evaluated by RAGAS, Factual Correctness achieved 0.6910, substantially outperforming standard RAG (0.5257) and HyDE (0.6178).
+            </p>
+            <div class="pub-actions">
+              <a href="https://doi.org/10.1109/ICCEIC67916.2025.11309165" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 4px 10px; font-size: 0.82rem;">IEEE DOI Link</a>
+              <a href="assets/docs/HypoSelectSimRAG_Paper.pdf" target="_blank" class="btn btn-outline" style="padding: 4px 10px; font-size: 0.82rem;">PDF</a>
+              <a href="posts/hyposelect-simrag.html" class="btn btn-outline" style="padding: 4px 10px; font-size: 0.82rem;">Read Paper Overview</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="content-section">
+          <h2 class="section-title">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+            Education
+          </h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <span class="timeline-time">2026.09 - 2027.08</span>
+              <div class="timeline-body">
+                <h3 class="timeline-heading">The University of Hong Kong (HKU)</h3>
+                <p class="timeline-sub">Master of Science in Computer Science · QS #11</p>
+                <p>Completing two-year master degree ahead of schedule; focused on Artificial Intelligence, Distributed Systems, and Advanced Software Engineering.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <span class="timeline-time">2022.08 - 2026.06</span>
+              <div class="timeline-body">
+                <h3 class="timeline-heading">Macao Polytechnic University (MPU)</h3>
+                <p class="timeline-sub">Bachelor of Science in Computer Science · <strong>GPA 3.67 / 4.0 (Top 5)</strong></p>
+                <ul class="timeline-bullets">
+                  <li><strong>Scholarship:</strong> 2024–2025 Macao Fok Ying Tung Foundation Scholarship (霍英东基金会奖学金).</li>
+                  <li><strong>Competitions & Honors:</strong> Huawei ICT Competition (Macao) Cloud Track Excellence Award.</li>
+                  <li><strong>Language Certifications:</strong> <strong>IELTS 7.0</strong>, CET-4 (583), CET-6 (491). Fluent in English, Mandarin, and Cantonese.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <span class="timeline-time">2023.05 - 2023.08</span>
+              <div class="timeline-body">
+                <h3 class="timeline-heading">Shanghai Jiao Tong University (SJTU)</h3>
+                <p class="timeline-sub">UM-SJTU Joint Institute · Summer Exchange Program</p>
+                <p>Engaged in advanced technical coursework, team algorithmic problems, and cross-cultural academic seminars.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Internships Section -->
+        <section id="internships" class="content-section">
+          <h2 class="section-title">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+            Internships & Industrial Experience
+          </h2>
+          <div class="timeline">
+            <!-- Internship 1 -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <span class="timeline-time">2026.07 - 2026.08</span>
+              <div class="timeline-body">
+                <h3 class="timeline-heading">Full-Stack Engineer Intern · Shunde Rural Commercial Bank (顺德农商银行)</h3>
+                <p class="timeline-sub">Project: Enterprise Green Finance Whitelist & Data Audit System</p>
+                <ul class="timeline-bullets">
+                  <li><strong>Streaming Data Ingestion:</strong> Replaced Apache POI with Alibaba EasyExcel to stream process bulk client spreadsheets, completely eliminating Java OutOfMemory (OOM) failures on large financial imports.</li>
+                  <li><strong>Complex Query Optimization:</strong> Optimized 3-table cross-verification joins by profiling slow SQL execution plans and indexing high-frequency composite keys, dropping verification latency from seconds to milliseconds.</li>
+                  <li><strong>Scheduled OSS Sync:</strong> Configured Spring Task cron jobs to automatically fetch, validate, and persist data from Alibaba Cloud OSS with retry mechanisms and structured audit logging.</li>
+                  <li><strong>Tech Stack:</strong> React, Ant Design, SOFABoot, Redis, MySQL, Spring Task, Alibaba Cloud OSS.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Internship 2 -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <span class="timeline-time">2025.06 - 2025.08</span>
+              <div class="timeline-body">
+                <h3 class="timeline-heading">Backend & AI Engineer Intern · Foshan Dayan Data Technology Co., Ltd.</h3>
+                <p class="timeline-sub">Project: Industrial AI Order Form Processing & Intelligent Email Agent System</p>
+                <ul class="timeline-bullets">
+                  <li><strong>Heterogeneous Document Parsing:</strong> Designed a multi-tier parsing pipeline: pdfplumber extraction &rarr; OCR fallback &rarr; LLM structured normalization, bypassing heavy CV model training while handling formats from 8+ major glass manufacturers.</li>
+                  <li><strong>Lightweight Microservice Architecture:</strong> Built Flask RESTful services tailored for low-maintenance factory intranet deployments, integrating end-to-end extraction, schema conversion, and database storage.</li>
+                  <li><strong>Enterprise Knowledge Base & Agent:</strong> Deployed a private self-hosted Dify instance. Created prompt workflows using Few-Shot + Chain-of-Thought (CoT) to resolve technical abbreviations, boosting order creation efficiency by <strong>87.5%</strong> (from 8h to 1h per batch).</li>
+                  <li><strong>Tech Stack:</strong> Flask, Dify Enterprise, DeepSeek API, pandas, numpy, pdfplumber, MySQL.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="content-section">
+          <h2 class="section-title">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            Research & Academic Projects
+          </h2>
+          <div class="projects-grid">
+            <div class="project-card">
+              <div class="project-category">Final Year Project</div>
+              <h3>High-Throughput DFT + Machine Learning for Materials Properties</h3>
+              <span class="project-time">2025.08 - 2026.04</span>
+              <p class="project-desc">
+                Conducted high-throughput ab initio calculations for Perovskite and Heusler crystals across structural relaxation, static SCF, band structures, and DOS. Benchmarked CGCNN, XGBoost, and Random Forest; CGCNN demonstrated remarkable accuracy with Fermi Level $R^2=0.9635$ and Band Gap $R^2=0.9584$.
+              </p>
+              <div class="project-tags">
+                <span class="tag">PyTorch</span>
+                <span class="tag">CGCNN</span>
+                <span class="tag">VASP</span>
+                <span class="tag">ArchLinux HPC</span>
+              </div>
+              <div class="project-links">
+                <a href="assets/docs/Materials_ML_Paper.pdf" target="_blank" class="btn btn-outline" style="padding: 4px 10px; font-size: 0.82rem;">Read Paper (PDF)</a>
+                <a href="posts/materials-ml-cgcnn.html" class="btn btn-outline" style="padding: 4px 10px; font-size: 0.82rem;">Case Study</a>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-category">Full-Stack Platform</div>
+              <h3>Secure Online Shopping E-Commerce Platform</h3>
+              <span class="project-time">2025.01 - 2025.04 · Team Leader</span>
+              <p class="project-desc">
+                Directed full-lifecycle delivery from product requirement documentation to architectural implementation. Integrated JWT authentication, SQL injection guards, and Google reCAPTCHA human verification with separated Vue3 and Django backends.
+              </p>
+              <div class="project-tags">
+                <span class="tag">Vue3</span>
+                <span class="tag">Django</span>
+                <span class="tag">SimpleJWT</span>
+                <span class="tag">MySQL</span>
+              </div>
+              <div class="project-links">
+                <a href="projects.html" class="btn btn-outline" style="padding: 4px 10px; font-size: 0.82rem;">Project Details</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Technical Skills -->
+        <section id="skills" class="content-section">
+          <h2 class="section-title">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            Technical Skills & Toolkit
+          </h2>
+          <div class="skills-container">
+            <div class="skill-category">
+              <div class="skill-cat-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                AI, Machine Learning & LLM Systems
+              </div>
+              <div class="skill-tags">
+                <span class="skill-badge">LangChain</span>
+                <span class="skill-badge">LangSmith</span>
+                <span class="skill-badge">Ragas Evaluation</span>
+                <span class="skill-badge">Dify Agent Platform</span>
+                <span class="skill-badge">PyTorch</span>
+                <span class="skill-badge">CGCNN (Crystal Graph CNN)</span>
+                <span class="skill-badge">XGBoost & Random Forest</span>
+                <span class="skill-badge">Prompt Engineering (Few-Shot, CoT)</span>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <div class="skill-cat-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                Backend & Systems Engineering
+              </div>
+              <div class="skill-tags">
+                <span class="skill-badge">Python (Flask, FastAPI, Django)</span>
+                <span class="skill-badge">Java (SpringBoot, SOFABoot)</span>
+                <span class="skill-badge">Redis Caching</span>
+                <span class="skill-badge">MySQL / PostgreSQL</span>
+                <span class="skill-badge">EasyExcel & POI Streaming</span>
+                <span class="skill-badge">RESTful APIs</span>
+                <span class="skill-badge">JWT Authentication</span>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <div class="skill-cat-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 7 4 4 20 4 20 7"></polyline><line x1="9" y1="20" x2="15" y2="20"></line><line x1="12" y1="4" x2="12" y2="20"></line></svg>
+                Frontend & UI Engineering
+              </div>
+              <div class="skill-tags">
+                <span class="skill-badge">Vue.js 3</span>
+                <span class="skill-badge">React.js</span>
+                <span class="skill-badge">TypeScript & JavaScript</span>
+                <span class="skill-badge">Ant Design & Element Plus</span>
+                <span class="skill-badge">Responsive HTML5 & CSS3</span>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <div class="skill-cat-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                Infrastructure, Scientific Computing & Languages
+              </div>
+              <div class="skill-tags">
+                <span class="skill-badge">ArchLinux & Ubuntu Server</span>
+                <span class="skill-badge">Slurm / HPC Supercomputer</span>
+                <span class="skill-badge">VASP & Pymatgen</span>
+                <span class="skill-badge">Git & GitHub Actions</span>
+                <span class="skill-badge">English (IELTS 7.0)</span>
+                <span class="skill-badge">Cantonese (Native/Fluent)</span>
+                <span class="skill-badge">Mandarin (Native)</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div>
+        &copy; 2026 Hanqi Huang (黄瀚祺). Hosted on GitHub Pages.
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/Hanson5732" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:huanghanqi1123@163.com">Email</a>
+        <a href="index.html">Home</a>
+        <a href="assets/docs/HUANG_Hanqi_CV.pdf" target="_blank">CV</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

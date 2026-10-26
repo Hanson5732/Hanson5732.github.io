@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HypoSelectSimRAG Deep Dive | Hanqi Huang</title>
+  <meta name="description" content="Technical walkthrough of HypoSelectSimRAG published in IEEE ICCEIC 2025 by Hanqi Huang and co-authors.">
+  <link rel="icon" type="image/jpeg" href="../assets/images/avatar.jpg">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container site-nav">
+      <a href="../index.html" class="nav-brand">
+        <img src="../assets/images/avatar.jpg" alt="Hanqi Huang" class="nav-avatar">
+        <div class="nav-title-group">
+          <span class="nav-name">Hanqi Huang</span>
+          <span class="nav-sub">黄瀚祺 · HKU CS</span>
+        </div>
+      </a>
+
+      <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle navigation menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li class="nav-link"><a href="../index.html">Home</a></li>
+        <li class="nav-link"><a href="../about.html">About</a></li>
+        <li class="nav-link"><a href="../projects.html">Projects</a></li>
+        <li class="nav-link"><a href="../publications.html">Publications</a></li>
+        <li class="nav-link active"><a href="../posts.html">Posts</a></li>
+        <li class="nav-link"><a href="../assets/docs/HUANG_Hanqi_CV.pdf" target="_blank">CV</a></li>
+        <li>
+          <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+            <span id="theme-icon"></span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Article Container -->
+  <main class="container" style="padding-top: 2.5rem; padding-bottom: 5rem;">
+    <div class="article-content">
+      
+      <div style="margin-bottom: 1.5rem;">
+        <a href="../posts.html" style="font-size:0.9rem; font-weight:600;">&larr; Back to all posts</a>
+      </div>
+
+      <header class="article-header" style="padding-top: 0;">
+        <div class="post-meta" style="margin-bottom: 0.75rem;">
+          <span>Published: October 2025</span>
+          <span>·</span>
+          <span>IEEE ICCEIC 2025</span>
+          <span>·</span>
+          <span style="color:var(--primary); font-weight:600;">Retrieval-Augmented Generation</span>
+        </div>
+        <h1 class="article-title">HypoSelectSimRAG: Enhancing Answer Accuracy in RAG via Multi-Path Self-Consistent Query Translation</h1>
+        <p style="font-size: 1.05rem; color: var(--text-light); font-style: italic;">
+          By Zhi Chen, <strong>Hanqi Huang</strong>, Junjie Wu, et al.
+        </p>
+      </header>
+
+      <article>
+        <h2>1. The Problem with Classical RAG and HyDE</h2>
+        <p>
+          Standard Retrieval-Augmented Generation (RAG) relies on dense vector search directly computed from the raw user query. However, users frequently express complex informational needs using colloquial, incomplete, or polysemous phrasing. When this happens, the query embedding deviates significantly from the document embedding space, yielding noisy retrieved contexts and severe hallucinations in LLM responses.
+        </p>
+        <p>
+          Hypothetical Document Embeddings (HyDE) attempted to resolve this by asking an LLM to generate a hypothetical answer document before retrieval. However, a single hypothetical document carries high stochastic variance: if the LLM hallucinates in the hypothetical document, the retrieval system is guided in the completely wrong direction.
+        </p>
+
+        <h2>2. Our Approach: HypoSelectSimRAG</h2>
+        <p>
+          To break the single-path dependency while preserving semantic grounding, we proposed <strong>HypoSelectSimRAG</strong>. Our core architecture consists of three components:
+        </p>
+        <ul>
+          <li><strong>Multi-Path Generation:</strong> We design two prompting formulations (Few-Shot Prompting and Question-Classification Prompting) under dual decoding temperatures ($T=0.1$ for deterministic focus, $T=1.1$ for exploratory diversity), creating 4 candidate hypothetical documents.</li>
+          <li><strong>Candidate Selection:</strong> We designed and benchmarked 5 candidate selection methods: Self-Consistency Voting, Scoring, Summary Aggregation, Average Vector, and <em>Best Vector</em>.</li>
+          <li><strong>Similarity-Aligned Dense Retrieval:</strong> The Best Vector candidate—the hypothetical document with the maximum cosine similarity to the original query—is fed to dense embedding retrieval to query the vector store.</li>
+        </ul>
+
+        <h2>3. Experimental Results on RAGAS Benchmark</h2>
+        <p>
+          We evaluated the framework on the standardized <code>rag-dataset-1200</code> benchmark using <strong>RAGAS</strong> (Retrieval Augmented Generation Assessment) across Factual Correctness, Answer Semantic Similarity, and Context Relevance.
+        </p>
+
+        <div style="overflow-x: auto; margin: 1.5rem 0;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem; text-align: left; background: var(--card-bg); border-radius: 8px; border: 1px solid var(--border-color);">
+            <thead>
+              <tr style="border-bottom: 2px solid var(--border-color); background: var(--card-subtle);">
+                <th style="padding: 10px 14px;">Method</th>
+                <th style="padding: 10px 14px;">Factual Correctness &uarr;</th>
+                <th style="padding: 10px 14px;">Answer Semantic Similarity &uarr;</th>
+                <th style="padding: 10px 14px;">Context Relevance &uarr;</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: 10px 14px;">Naive RAG</td>
+                <td style="padding: 10px 14px;">0.5257</td>
+                <td style="padding: 10px 14px;">0.8124</td>
+                <td style="padding: 10px 14px;">0.5620</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: 10px 14px;">HyDE</td>
+                <td style="padding: 10px 14px;">0.6178</td>
+                <td style="padding: 10px 14px;">0.8492</td>
+                <td style="padding: 10px 14px;">0.6350</td>
+              </tr>
+              <tr style="background: var(--primary-light); font-weight: 600;">
+                <td style="padding: 10px 14px;"><strong>HypoSelectSimRAG (Ours)</strong></td>
+                <td style="padding: 10px 14px; color: var(--primary);"><strong>0.6910</strong></td>
+                <td style="padding: 10px 14px; color: var(--primary);"><strong>0.8872</strong></td>
+                <td style="padding: 10px 14px; color: var(--primary);"><strong>0.7180</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          As demonstrated above, HypoSelectSimRAG achieved an impressive <strong>+31.4% improvement in Factual Correctness</strong> over standard RAG, and substantially exceeded single-path HyDE.
+        </p>
+
+        <h2>4. Implementation & Availability</h2>
+        <p>
+          The pipeline was implemented using Python and the <strong>LangChain</strong> framework, monitored through <strong>LangSmith</strong> for token tracing, and validated on extensive test sets.
+        </p>
+        <p>
+          The full research paper is published in IEEE:
+        </p>
+        <p>
+          <a href="https://doi.org/10.1109/ICCEIC67916.2025.11309165" target="_blank" class="btn btn-primary">IEEE Publication Link</a>
+          <a href="../assets/docs/HypoSelectSimRAG_Paper.pdf" target="_blank" class="btn btn-outline" style="margin-left: 0.5rem;">Download Paper (PDF)</a>
+        </p>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div>
+        &copy; 2026 Hanqi Huang (黄瀚祺). Hosted on GitHub Pages.
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/Hanson5732" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:huanghanqi1123@163.com">Email</a>
+        <a href="../about.html">About</a>
+        <a href="../assets/docs/HUANG_Hanqi_CV.pdf" target="_blank">CV</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

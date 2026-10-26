@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publications | Hanqi Huang (黄瀚祺)</title>
+  <meta name="description" content="Academic Publications and Preprints by Hanqi Huang (黄瀚祺).">
+  <link rel="icon" type="image/jpeg" href="assets/images/avatar.jpg">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container site-nav">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/images/avatar.jpg" alt="Hanqi Huang" class="nav-avatar">
+        <div class="nav-title-group">
+          <span class="nav-name">Hanqi Huang</span>
+          <span class="nav-sub">黄瀚祺 · HKU CS</span>
+        </div>
+      </a>
+
+      <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle navigation menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li class="nav-link"><a href="index.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg> Home</a></li>
+        <li class="nav-link"><a href="about.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> About</a></li>
+        <li class="nav-link"><a href="projects.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg> Projects</a></li>
+        <li class="nav-link"><a href="publications.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg> Publications</a></li>
+        <li class="nav-link"><a href="posts.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> Posts</a></li>
+        <li class="nav-link"><a href="assets/docs/HUANG_Hanqi_CV.pdf" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> CV</a></li>
+        <li>
+          <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+            <span id="theme-icon"></span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container" style="padding-top: 2.5rem; padding-bottom: 4rem;">
+    <div style="margin-bottom: 2.5rem;">
+      <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Academic Publications</h1>
+      <p style="color: var(--text-muted); font-size: 1.05rem;">
+        Research papers in Retrieval-Augmented Generation, Information Retrieval, and Machine Learning.
+      </p>
+    </div>
+
+    <!-- Publication Card 1 -->
+    <div class="publication-card">
+      <div class="pub-header">
+        <h2 class="pub-title">HypoSelectSimRAG: Enhancing Answer Accuracy in RAG via Multi-Path Self-Consistent Query Translation</h2>
+        <span class="pub-badge">IEEE ICCEIC 2025</span>
+      </div>
+      <p class="pub-authors">
+        Zhi Chen, <span class="pub-author-me">Hanqi Huang</span> (黄瀚祺), Junjie Wu, et al.
+      </p>
+      <p class="pub-venue">
+        The 6th International Conference on Computer Engineering and Intelligent Control (ICCEIC), IEEE, 2025.
+      </p>
+      
+      <div class="pub-abstract">
+        <strong>Abstract:</strong> Existing Retrieval-Augmented Generation (RAG) frameworks struggle when user queries do not directly match the semantic space of the external knowledge corpus, leading to irrelevant context retrieval and factual hallucination. In this paper, we propose <strong>HypoSelectSimRAG</strong>, a framework coupling multi-path hypothetical document generation with self-consistency query alignment. By varying prompt styles and decoding temperatures (0.1 and 1.1), four distinct hypothetical contexts are generated. A vector-similarity voting mechanism then filters the candidate with the highest query alignment prior to dense retrieval. Extensive experiments on the <code>rag-dataset-1200</code> benchmark evaluated with RAGAS show that HypoSelectSimRAG improves Factual Correctness to <strong>0.6910</strong>, significantly outperforming standard RAG (0.5257) and HyDE (0.6178).
+      </div>
+
+      <div class="pub-actions">
+        <a href="https://doi.org/10.1109/ICCEIC67916.2025.11309165" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 5px 12px; font-size: 0.85rem;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+          IEEE DOI: 10.1109/ICCEIC67916.2025.11309165
+        </a>
+        <a href="assets/docs/HypoSelectSimRAG_Paper.pdf" target="_blank" class="btn btn-outline" style="padding: 5px 12px; font-size: 0.85rem;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="15" y2="15"></line></svg>
+          PDF Full Text
+        </a>
+        <a href="posts/hyposelect-simrag.html" class="btn btn-outline" style="padding: 5px 12px; font-size: 0.85rem;">
+          Research Note
+        </a>
+      </div>
+
+      <!-- BibTeX Box -->
+      <div style="margin-top: 1rem;">
+        <span style="font-size:0.82rem; font-weight:600; color:var(--text-light); text-transform:uppercase;">BibTeX Citation:</span>
+        <div class="bibtex-box" id="bib-rag">
+          <button class="copy-btn" onclick="copyBibtex('bib-rag')">Copy BibTeX</button>
+@inproceedings{huang2025hyposelectsimrag,
+  author    = {Chen, Zhi and Huang, Hanqi and Wu, Junjie and et al.},
+  title     = {HypoSelectSimRAG: Enhancing Answer Accuracy in RAG via Multi-Path Self-Consistent Query Translation},
+  booktitle = {Proceedings of the 6th International Conference on Computer Engineering and Intelligent Control (ICCEIC)},
+  publisher = {IEEE},
+  year      = {2025},
+  doi       = {10.1109/ICCEIC67916.2025.11309165}
+}</div>
+      </div>
+    </div>
+
+    <!-- Scientific Research Manuscript / Thesis 2 -->
+    <div class="publication-card">
+      <div class="pub-header">
+        <h2 class="pub-title">Predicting Electronic and Thermodynamic Properties of Functional Materials with High-Throughput DFT and Graph Neural Networks</h2>
+        <span class="pub-badge">Undergraduate Thesis / Manuscript</span>
+      </div>
+      <p class="pub-authors">
+        <span class="pub-author-me">Hanqi Huang</span> (黄瀚祺), Supervised at Macao Polytechnic University
+      </p>
+      <p class="pub-venue">
+        Research Monograph & Final Year Thesis, 2026.
+      </p>
+      
+      <div class="pub-abstract">
+        <strong>Abstract:</strong> Discovering functional energy materials requires accurately screening electronic and thermodynamic characteristics across vast crystal configuration spaces. We establish an end-to-end automated high-throughput first-principles Density Functional Theory (DFT) computation pipeline based on VASP and Pymatgen on an ArchLinux supercomputer. With 2,598 calculated structures of Perovskite and Heusler crystals, we systematically benchmark Crystal Graph Convolutional Neural Networks (CGCNN) against gradient-boosted trees. CGCNN achieves outstanding accuracy for electronic topological parameters ($R^2 = 0.9635$ for Fermi level, $R^2 = 0.9584$ for band gap), whereas XGBoost excels at thermodynamic formation energy ($R^2 = 0.986$).
+      </div>
+
+      <div class="pub-actions">
+        <a href="assets/docs/Materials_ML_Paper.pdf" target="_blank" class="btn btn-primary" style="padding: 5px 12px; font-size: 0.85rem;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="15" y2="15"></line></svg>
+          Download Monograph (PDF)
+        </a>
+        <a href="posts/materials-ml-cgcnn.html" class="btn btn-outline" style="padding: 5px 12px; font-size: 0.85rem;">
+          Read Technical Notes
+        </a>
+      </div>
+
+      <!-- BibTeX Box -->
+      <div style="margin-top: 1rem;">
+        <span style="font-size:0.82rem; font-weight:600; color:var(--text-light); text-transform:uppercase;">BibTeX Citation:</span>
+        <div class="bibtex-box" id="bib-mat">
+          <button class="copy-btn" onclick="copyBibtex('bib-mat')">Copy BibTeX</button>
+@article{huang2026materials,
+  author  = {Huang, Hanqi},
+  title   = {Predicting Electronic and Thermodynamic Properties of Functional Materials with High-Throughput DFT and Graph Neural Networks},
+  journal = {Final Year Research Monograph, Macao Polytechnic University},
+  year    = {2026}
+}</div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div>
+        &copy; 2026 Hanqi Huang (黄瀚祺). Hosted on GitHub Pages.
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/Hanson5732" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:huanghanqi1123@163.com">Email</a>
+        <a href="about.html">About</a>
+        <a href="assets/docs/HUANG_Hanqi_CV.pdf" target="_blank">CV</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
