@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文章笔记 | 黄瀚祺</title>
+  <meta name="description" content="黄瀚祺的技术笔记、学术思考与实践记录。">
+  <link rel="icon" type="image/jpeg" href="../assets/images/avatar.jpg">
+
+  <link rel="stylesheet" href="../assets/css/style.css?v=2.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+</head>
+<body>
+
+  <!-- 顶部导航栏 -->
+  <header class="site-header">
+    <div class="container site-nav">
+      <a href="index.html" class="nav-brand">
+        <img src="../assets/images/avatar.jpg" alt="黄瀚祺" class="nav-avatar">
+        <div class="nav-title-group">
+          <span class="nav-name">黄瀚祺</span>
+          <span class="nav-sub">香港大学 CS</span>
+        </div>
+      </a>
+
+      <!-- 导航链接 -->
+      <ul class="nav-links" id="nav-links">
+        <li class="nav-link"><a href="index.html">首页</a></li>
+        <li class="nav-link"><a href="about.html">关于我</a></li>
+        <li class="nav-link"><a href="projects.html">精选项目</a></li>
+        <li class="nav-link"><a href="publications.html">学术成果</a></li>
+        <li class="nav-link"><a href="posts.html">文章笔记</a></li>
+        <li class="nav-link">
+          <a href="../assets/docs/HUANG_Hanqi_CV_CN.pdf" target="_blank">中文简历</a>
+        </li>
+      </ul>
+
+      <!-- 右侧控制区：顶部语言切换 [ EN | 中 ] + 主题切换 + 移动端菜单 -->
+      <div class="nav-actions">
+        <div class="lang-pill" aria-label="语言切换">
+          <a href="../posts.html" class="lang-pill-item" title="Switch to English">EN</a>
+          <span class="lang-pill-item active">中</span>
+        </div>
+        <button id="theme-toggle" class="nav-btn theme-toggle-btn" aria-label="切换深色模式">
+          <span id="theme-icon"></span>
+        </button>
+        <button id="mobile-menu-btn" class="nav-btn mobile-menu-btn" aria-label="展开导航菜单">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主体容器 -->
+  <main class="container" style="padding-top: 2.5rem; padding-bottom: 4rem;">
+    <div style="margin-bottom: 2.5rem;">
+      <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">文章与技术笔记</h1>
+      <p style="color: var(--text-muted); font-size: 1.05rem;">
+        记录大语言模型 RAG 研究演进、超算高通量计算与工程实践随笔。
+      </p>
+    </div>
+
+    <div class="posts-list">
+      
+      <!-- 文章 1 -->
+      <article class="post-item">
+        <div class="post-meta">
+          <span>2025.10.28</span>
+          <span>·</span>
+          <span>10 分钟阅读</span>
+          <span>·</span>
+          <span style="color:var(--primary); font-weight:600;">大模型学术研究</span>
+        </div>
+        <h2 class="post-title">
+          <a href="../posts/hyposelect-simrag.html">HypoSelectSimRAG: 基于多路径自一致性查询转换提高 RAG 答案精度</a>
+        </h2>
+        <p class="post-summary">
+          深入解析 IEEE ICCEIC 2025 会议收录论文：为何标准 RAG 与 HyDE 在口语化或跨领域查询下容易失效，多路径虚拟文档采样如何工作，以及余弦相似度自一致性筛选为何能在 RAGAS 评测中达到 0.6910 的高准确度。
+        </p>
+        <div class="project-tags">
+          <span class="tag">RAG</span>
+          <span class="tag">LangChain</span>
+          <span class="tag">信息检索</span>
+          <span class="tag">IEEE 论文</span>
+        </div>
+      </article>
+
+      <!-- 文章 2 -->
+      <article class="post-item">
+        <div class="post-meta">
+          <span>2026.04.15</span>
+          <span>·</span>
+          <span>12 分钟阅读</span>
+          <span>·</span>
+          <span style="color:var(--primary); font-weight:600;">材料信息学</span>
+        </div>
+        <h2 class="post-title">
+          <a href="../posts/materials-ml-cgcnn.html">高通量 DFT + 晶体图神经网络（CGCNN）：预测功能材料的电子与热力学性质</a>
+        </h2>
+        <p class="post-summary">
+          如何在 ArchLinux 超算集群上搭建基于 VASP + Pymatgen 的四阶段高通量 DFT 流水线，并对比晶体图神经网络（CGCNN）与传统梯度提升树在热力学和电子性质上的分化表现。
+        </p>
+        <div class="project-tags">
+          <span class="tag">图神经网络</span>
+          <span class="tag">PyTorch</span>
+          <span class="tag">DFT / VASP</span>
+          <span class="tag">超算集群</span>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div>
+        &copy; 2026 黄瀚祺 (Hanqi Huang). Hosted on GitHub Pages.
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/Hanson5732" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:huanghanqi1123@163.com">邮箱</a>
+        <a href="about.html">关于我</a>
+        <a href="../assets/docs/HUANG_Hanqi_CV_CN.pdf" target="_blank">中文简历</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js?v=2.0"></script>
+</body>
+</html>

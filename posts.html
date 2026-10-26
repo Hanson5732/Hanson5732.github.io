@@ -1,24 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" data-lang="en">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Posts & Notes | Hanqi Huang (黄瀚祺)</title>
-  <meta name="description" content="Technical notes, research insights, and reflections by Hanqi Huang (黄瀚祺).">
+  <title>Posts & Notes | Hanqi Huang</title>
+  <meta name="description" content="Technical notes, research insights, and reflections by Hanqi Huang.">
   <link rel="icon" type="image/jpeg" href="assets/images/avatar.jpg">
 
-  <!-- Prevent flash of unstyled theme or language -->
-  <script>
-    (function() {
-      var savedLang = localStorage.getItem('site_lang') || 'en';
-      document.documentElement.setAttribute('data-lang', savedLang);
-      document.documentElement.setAttribute('lang', savedLang === 'zh' ? 'zh-CN' : 'en');
-      var savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', savedTheme);
-    })();
-  </script>
-
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=2.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
@@ -33,49 +22,26 @@
         <img src="assets/images/avatar.jpg" alt="Hanqi Huang" class="nav-avatar">
         <div class="nav-title-group">
           <span class="nav-name">Hanqi Huang</span>
-          <span class="nav-sub">黄瀚祺 · HKU CS</span>
+          <span class="nav-sub">HKU CS</span>
         </div>
       </a>
 
       <!-- Navigation Links -->
       <ul class="nav-links" id="nav-links">
-        <li class="nav-link"><a href="index.html">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-          <span class="lang-en">Home</span><span class="lang-zh">首页</span>
-        </a></li>
-        <li class="nav-link"><a href="about.html">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-          <span class="lang-en">About</span><span class="lang-zh">关于我</span>
-        </a></li>
-        <li class="nav-link"><a href="projects.html">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-          <span class="lang-en">Projects</span><span class="lang-zh">精选项目</span>
-        </a></li>
-        <li class="nav-link"><a href="publications.html">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-          <span class="lang-en">Publications</span><span class="lang-zh">学术成果</span>
-        </a></li>
-        <li class="nav-link"><a href="posts.html">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          <span class="lang-en">Posts</span><span class="lang-zh">文章笔记</span>
-        </a></li>
-        <li class="nav-link">
-          <a href="assets/docs/HUANG_Hanqi_CV.pdf" target="_blank" class="lang-en">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-            CV
-          </a>
-          <a href="assets/docs/HUANG_Hanqi_CV_CN.pdf" target="_blank" class="lang-zh">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-            中文简历
-          </a>
-        </li>
+        <li class="nav-link"><a href="index.html">Home</a></li>
+        <li class="nav-link"><a href="about.html">About</a></li>
+        <li class="nav-link"><a href="projects.html">Projects</a></li>
+        <li class="nav-link"><a href="publications.html">Publications</a></li>
+        <li class="nav-link"><a href="posts.html">Posts</a></li>
+        <li class="nav-link"><a href="assets/docs/HUANG_Hanqi_CV.pdf" target="_blank">CV</a></li>
       </ul>
 
       <!-- Action buttons -->
       <div class="nav-actions">
-        <button id="lang-toggle" class="nav-btn lang-toggle-btn" aria-label="Switch Language" title="Switch English / 中文">
-          <span class="lang-text">中文</span>
-        </button>
+        <div class="lang-pill" aria-label="Language selection">
+          <span class="lang-pill-item active">EN</span>
+          <a href="zh/posts.html" class="lang-pill-item" title="切换到中文版">中</a>
+        </div>
         <button id="theme-toggle" class="nav-btn theme-toggle-btn" aria-label="Toggle dark mode">
           <span id="theme-icon"></span>
         </button>
@@ -89,15 +55,9 @@
   <!-- Main Container -->
   <main class="container" style="padding-top: 2.5rem; padding-bottom: 4rem;">
     <div style="margin-bottom: 2.5rem;">
-      <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">
-        <span class="lang-en">Posts & Research Notes</span>
-        <span class="lang-zh">文章与技术笔记</span>
-      </h1>
-      <p style="color: var(--text-muted); font-size: 1.05rem;" class="lang-en">
-        Reflections on AI research, high-throughput computational pipelines, software engineering, and reflections.
-      </p>
-      <p style="color: var(--text-muted); font-size: 1.05rem;" class="lang-zh">
-        记录大语言模型 RAG 研究演进、超算高通量计算与工程实践随笔。
+      <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Posts & Research Notes</h1>
+      <p style="color: var(--text-muted); font-size: 1.05rem;">
+        Reflections on AI research, high-throughput computational pipelines, and software engineering.
       </p>
     </div>
 
@@ -115,11 +75,8 @@
         <h2 class="post-title">
           <a href="posts/hyposelect-simrag.html">HypoSelectSimRAG: Enhancing Answer Accuracy in RAG via Multi-Path Self-Consistent Query Translation</a>
         </h2>
-        <p class="post-summary lang-en">
+        <p class="post-summary">
           A deep dive into our IEEE ICCEIC 2025 research: why standard RAG and HyDE fail on non-standardized user prompts, how multi-path diverse virtual document sampling works, and why cosine similarity voting achieves 0.6910 factual correctness on RAGAS benchmarks.
-        </p>
-        <p class="post-summary lang-zh">
-          深入解析 IEEE ICCEIC 2025 会议收录论文：为何标准 RAG 与 HyDE 在口语化或跨领域查询下容易失效，多路径虚拟文档采样如何工作，以及余弦相似度自一致性筛选为何能在 RAGAS 评测中达到 0.6910 的高准确度。
         </p>
         <div class="project-tags">
           <span class="tag">RAG</span>
@@ -141,11 +98,8 @@
         <h2 class="post-title">
           <a href="posts/materials-ml-cgcnn.html">High-Throughput DFT + CGCNN: Predicting Electronic & Thermodynamic Properties of Functional Crystals</a>
         </h2>
-        <p class="post-summary lang-en">
+        <p class="post-summary">
           How we constructed an automated 4-stage DFT calculation pipeline with VASP + Pymatgen on an ArchLinux supercomputing cluster, and compared Crystal Graph Convolutional Neural Networks (CGCNN) with tabular gradient boosting trees.
-        </p>
-        <p class="post-summary lang-zh">
-          如何在 ArchLinux 超算集群上搭建基于 VASP + Pymatgen 的四阶段高通量 DFT 流水线，并对比晶体图神经网络（CGCNN）与传统梯度提升树在热力学和电子性质上的分化表现。
         </p>
         <div class="project-tags">
           <span class="tag">Graph Neural Networks</span>
@@ -162,20 +116,17 @@
   <footer class="site-footer">
     <div class="container footer-content">
       <div>
-        &copy; 2026 Hanqi Huang (黄瀚祺). Hosted on GitHub Pages.
+        &copy; 2026 Hanqi Huang. Hosted on GitHub Pages.
       </div>
       <div class="footer-links">
         <a href="https://github.com/Hanson5732" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="mailto:huanghanqi1123@163.com">Email</a>
-        <a href="about.html">
-          <span class="lang-en">About</span><span class="lang-zh">关于</span>
-        </a>
-        <a href="assets/docs/HUANG_Hanqi_CV.pdf" target="_blank" class="lang-en">CV</a>
-        <a href="assets/docs/HUANG_Hanqi_CV_CN.pdf" target="_blank" class="lang-zh">中文简历</a>
+        <a href="about.html">About</a>
+        <a href="assets/docs/HUANG_Hanqi_CV.pdf" target="_blank">CV</a>
       </div>
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js?v=2.0"></script>
 </body>
 </html>

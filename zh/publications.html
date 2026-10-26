@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>学术成果 | 黄瀚祺</title>
+  <meta name="description" content="黄瀚祺的正式发表论文与科研成果：检索增强生成（RAG）、材料信息学与机器学习。">
+  <link rel="icon" type="image/jpeg" href="../assets/images/avatar.jpg">
+
+  <link rel="stylesheet" href="../assets/css/style.css?v=2.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+</head>
+<body>
+
+  <!-- 顶部导航栏 -->
+  <header class="site-header">
+    <div class="container site-nav">
+      <a href="index.html" class="nav-brand">
+        <img src="../assets/images/avatar.jpg" alt="黄瀚祺" class="nav-avatar">
+        <div class="nav-title-group">
+          <span class="nav-name">黄瀚祺</span>
+          <span class="nav-sub">香港大学 CS</span>
+        </div>
+      </a>
+
+      <!-- 导航链接 -->
+      <ul class="nav-links" id="nav-links">
+        <li class="nav-link"><a href="index.html">首页</a></li>
+        <li class="nav-link"><a href="about.html">关于我</a></li>
+        <li class="nav-link"><a href="projects.html">精选项目</a></li>
+        <li class="nav-link"><a href="publications.html">学术成果</a></li>
+        <li class="nav-link"><a href="posts.html">文章笔记</a></li>
+        <li class="nav-link">
+          <a href="../assets/docs/HUANG_Hanqi_CV_CN.pdf" target="_blank">中文简历</a>
+        </li>
+      </ul>
+
+      <!-- 右侧控制区：顶部语言切换 [ EN | 中 ] + 主题切换 + 移动端菜单 -->
+      <div class="nav-actions">
+        <div class="lang-pill" aria-label="语言切换">
+          <a href="../publications.html" class="lang-pill-item" title="Switch to English">EN</a>
+          <span class="lang-pill-item active">中</span>
+        </div>
+        <button id="theme-toggle" class="nav-btn theme-toggle-btn" aria-label="切换深色模式">
+          <span id="theme-icon"></span>
+        </button>
+        <button id="mobile-menu-btn" class="nav-btn mobile-menu-btn" aria-label="展开导航菜单">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主体容器 -->
+  <main class="container" style="padding-top: 2.5rem; padding-bottom: 4rem;">
+    <div style="margin-bottom: 2.5rem;">
+      <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">学术成果与科研手稿</h1>
+      <p style="color: var(--text-muted); font-size: 1.05rem;">
+        聚焦于大模型检索增强生成（RAG）、信息检索与材料信息学（Materials Informatics）的正式发表论文与科研成果。
+      </p>
+    </div>
+
+    <!-- 论文卡片 1 -->
+    <div class="publication-card">
+      <div class="pub-header">
+        <h2 class="pub-title">HypoSelectSimRAG: Enhancing Answer Accuracy in RAG via Multi-Path Self-Consistent Query Translation</h2>
+        <span class="pub-badge">IEEE ICCEIC 2025</span>
+      </div>
+      <p class="pub-authors">
+        Zhi Chen, <span class="pub-author-me">黄瀚祺 (Hanqi Huang)</span>, Junjie Wu, et al.
+      </p>
+      <p class="pub-venue">
+        第六届计算机工程与智能控制国际会议 (ICCEIC 2025), IEEE 收录
+      </p>
+      
+      <div class="pub-abstract">
+        <strong>摘要：</strong> 针对用户输入非规范或与文档库存在分布偏差时传统 RAG 检索噪声大、模型易产生幻觉的问题，提出 <strong>HypoSelectSimRAG</strong> 框架。结合 Few-Shot 与问题分类提示工程，在双温度梯度（0.1 / 1.1）下生成四条具有精细度与多样性的虚拟文档路径，并通过余弦相似度自一致性筛选最优假设文档送入向量检索。在 <code>rag-dataset-1200</code> 测试集上经 RAGAS 框架严格评测，事实准确率达 <strong>0.6910</strong>，较普通 RAG 显著提升 31.4%（0.5257），并大幅超越单路径 HyDE（0.6178）。
+      </div>
+
+      <div class="pub-actions">
+        <a href="https://doi.org/10.1109/ICCEIC67916.2025.11309165" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+          IEEE DOI: 10.1109/ICCEIC67916.2025.11309165
+        </a>
+        <a href="../assets/docs/HypoSelectSimRAG_Paper.pdf" target="_blank" class="btn btn-outline">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="15" y2="15"></line></svg>
+          论文原文 (PDF 下载)
+        </a>
+        <a href="posts.html" class="btn btn-outline">
+          技术深度解析
+        </a>
+      </div>
+
+      <!-- BibTeX Box -->
+      <div style="margin-top: 1rem;">
+        <span style="font-size:0.82rem; font-weight:600; color:var(--text-light); text-transform:uppercase;">BibTeX 引用格式:</span>
+        <div class="bibtex-box" id="bib-rag">
+          <button class="copy-btn" onclick="copyBibtex('bib-rag')">复制 BibTeX</button>
+@inproceedings{huang2025hyposelectsimrag,
+  author    = {Chen, Zhi and Huang, Hanqi and Wu, Junjie and et al.},
+  title     = {HypoSelectSimRAG: Enhancing Answer Accuracy in RAG via Multi-Path Self-Consistent Query Translation},
+  booktitle = {Proceedings of the 6th International Conference on Computer Engineering and Intelligent Control (ICCEIC)},
+  publisher = {IEEE},
+  year      = {2025},
+  doi       = {10.1109/ICCEIC67916.2025.11309165}
+}</div>
+      </div>
+    </div>
+
+    <!-- 科研成果 2 -->
+    <div class="publication-card">
+      <div class="pub-header">
+        <h2 class="pub-title">基于高通量第一性原理与晶体图神经网络预测功能材料的电子与热力学性质</h2>
+        <span class="pub-badge">本科毕业设计 / 科研专著</span>
+      </div>
+      <p class="pub-authors">
+        <span class="pub-author-me">黄瀚祺 (Hanqi Huang)</span>, 澳门理工大学
+      </p>
+      <p class="pub-venue">
+        科研专著 & 优秀毕业论文, 2026.
+      </p>
+      
+      <div class="pub-abstract">
+        <strong>摘要：</strong> 针对新型能源功能材料筛选成本高昂的瓶颈，在基于 ArchLinux 的超算集群上自主构建“自动化高通量 DFT 第一性原理计算 + 机器学习”混合框架。处理钙钛矿与霍斯勒合金等 2,598 种晶体结构数据，系统对比图神经网络（CGCNN）与表格模型（XGBoost / 随机森林）。CGCNN 在全局晶格拓扑主导的电子性质上表现最优（费米能级 $R^2=0.9635$，带隙 $R^2=0.9584$）；XGBoost 在局域化学键主导的热力学形成能表现最佳（$R^2=0.986$），据此提出体系结构分化筛选方案。
+      </div>
+
+      <div class="pub-actions">
+        <a href="../assets/docs/Materials_ML_Paper.pdf" target="_blank" class="btn btn-primary">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="15" y2="15"></line></svg>
+          下载论文报告 (PDF)
+        </a>
+        <a href="posts.html" class="btn btn-outline">
+          技术解析笔记
+        </a>
+      </div>
+
+      <!-- BibTeX Box -->
+      <div style="margin-top: 1rem;">
+        <span style="font-size:0.82rem; font-weight:600; color:var(--text-light); text-transform:uppercase;">BibTeX 引用格式:</span>
+        <div class="bibtex-box" id="bib-mat">
+          <button class="copy-btn" onclick="copyBibtex('bib-mat')">复制 BibTeX</button>
+@article{huang2026materials,
+  author  = {Huang, Hanqi},
+  title   = {Predicting Electronic and Thermodynamic Properties of Functional Materials with High-Throughput DFT and Graph Neural Networks},
+  journal = {Final Year Research Monograph, Macao Polytechnic University},
+  year    = {2026}
+}</div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div>
+        &copy; 2026 黄瀚祺 (Hanqi Huang). Hosted on GitHub Pages.
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/Hanson5732" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:huanghanqi1123@163.com">邮箱</a>
+        <a href="about.html">关于我</a>
+        <a href="../assets/docs/HUANG_Hanqi_CV_CN.pdf" target="_blank">中文简历</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js?v=2.0"></script>
+</body>
+</html>

@@ -1,52 +1,13 @@
 /**
  * Hanqi Huang (黄瀚祺) - Personal Website JavaScript
- * Supports: Theme Toggle (Dark/Light), Language Switcher (EN default, ZH optional),
- * Mobile Navigation, BibTeX Copy, and Project Category Filtering.
+ * Supports: Theme Toggle (Dark/Light), Mobile Navigation, BibTeX Copy, and Project Category Filtering.
  */
 
 (function () {
   'use strict';
 
   // ==========================================================================
-  // 1. Language Management (Default: English 'en', Optional: Chinese 'zh')
-  // ==========================================================================
-  const langToggleBtn = document.getElementById('lang-toggle');
-
-  function getSavedLanguage() {
-    // Strictly default to 'en' unless user explicitly selected 'zh'
-    return localStorage.getItem('site_lang') || 'en';
-  }
-
-  function applyLanguage(lang) {
-    document.documentElement.setAttribute('data-lang', lang);
-    document.documentElement.setAttribute('lang', lang === 'zh' ? 'zh-CN' : 'en');
-    localStorage.setItem('site_lang', lang);
-    updateLangButton(lang);
-  }
-
-  function updateLangButton(lang) {
-    if (!langToggleBtn) return;
-    const langSpan = langToggleBtn.querySelector('.lang-text');
-    if (langSpan) {
-      // In English mode, show "中文" so user knows clicking will switch to Chinese
-      // In Chinese mode, show "English" (or "EN")
-      langSpan.innerText = (lang === 'zh') ? 'EN' : '中文';
-    }
-  }
-
-  // Initialize Language immediately
-  const initialLang = getSavedLanguage();
-  applyLanguage(initialLang);
-
-  if (langToggleBtn) {
-    langToggleBtn.addEventListener('click', () => {
-      const current = document.documentElement.getAttribute('data-lang') || 'en';
-      applyLanguage(current === 'zh' ? 'en' : 'zh');
-    });
-  }
-
-  // ==========================================================================
-  // 2. Theme Management (Light / Dark)
+  // 1. Theme Management (Light / Dark)
   // ==========================================================================
   const themeToggleBtn = document.getElementById('theme-toggle');
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
@@ -105,7 +66,7 @@
   });
 
   // ==========================================================================
-  // 3. Mobile Menu Toggle
+  // 2. Mobile Menu Toggle
   // ==========================================================================
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const navLinks = document.getElementById('nav-links');
@@ -132,7 +93,7 @@
   }
 
   // ==========================================================================
-  // 4. Highlight Active Navigation
+  // 3. Highlight Active Navigation
   // ==========================================================================
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
   const navItems = document.querySelectorAll('.nav-link a');
@@ -144,7 +105,7 @@
   });
 
   // ==========================================================================
-  // 5. BibTeX Copy to Clipboard
+  // 4. BibTeX Copy to Clipboard
   // ==========================================================================
   window.copyBibtex = function (id) {
     const el = document.getElementById(id);
@@ -153,7 +114,8 @@
     navigator.clipboard.writeText(text).then(() => {
       const btn = event.target;
       const original = btn.innerText;
-      btn.innerText = (document.documentElement.getAttribute('data-lang') === 'zh') ? '已复制！' : 'Copied!';
+      const isZh = window.location.pathname.includes('/zh/');
+      btn.innerText = isZh ? '已复制！' : 'Copied!';
       btn.style.color = 'var(--primary)';
       setTimeout(() => {
         btn.innerText = original;
@@ -165,7 +127,7 @@
   };
 
   // ==========================================================================
-  // 6. Project Filter Tabs (on projects.html)
+  // 5. Project Filter Tabs (on projects.html)
   // ==========================================================================
   const filterBtns = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card[data-category]');

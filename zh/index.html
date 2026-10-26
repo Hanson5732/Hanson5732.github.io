@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>黄瀚祺 | 个人主页</title>
+  <meta name="description" content="黄瀚祺（Hanqi Huang）- 香港大学计算机科学硕士在读。专注于大模型智能体、RAG、高通量材料信息学与全栈工程开发。">
+  <meta name="keywords" content="黄瀚祺, Hanqi Huang, Hanson5732, 香港大学, 澳门理工大学, RAG, 智能体, 机器学习, 材料信息学, 全栈开发">
+  <meta property="og:title" content="黄瀚祺 | 个人主页">
+  <meta property="og:description" content="香港大学计算机科学专业硕士。聚焦 AI、RAG、材料信息学与全栈系统工程。">
+  <meta property="og:image" content="../assets/images/avatar.jpg">
+  <link rel="icon" type="image/jpeg" href="../assets/images/avatar.jpg">
+  
+  <link rel="stylesheet" href="../assets/css/style.css?v=2.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+</head>
+<body>
+
+  <!-- 顶部导航栏 -->
+  <header class="site-header">
+    <div class="container site-nav">
+      <a href="index.html" class="nav-brand">
+        <img src="../assets/images/avatar.jpg" alt="黄瀚祺" class="nav-avatar">
+        <div class="nav-title-group">
+          <span class="nav-name">黄瀚祺</span>
+          <span class="nav-sub">香港大学 CS</span>
+        </div>
+      </a>
+
+      <!-- 导航链接 -->
+      <ul class="nav-links" id="nav-links">
+        <li class="nav-link"><a href="index.html">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          首页
+        </a></li>
+        <li class="nav-link"><a href="about.html">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          关于我
+        </a></li>
+        <li class="nav-link"><a href="projects.html">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+          精选项目
+        </a></li>
+        <li class="nav-link"><a href="publications.html">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          学术成果
+        </a></li>
+        <li class="nav-link"><a href="posts.html">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          文章笔记
+        </a></li>
+        <li class="nav-link">
+          <a href="../assets/docs/HUANG_Hanqi_CV_CN.pdf" target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            中文简历
+          </a>
+        </li>
+      </ul>
+
+      <!-- 右侧控制区：顶部语言切换 [ EN | 中 ] + 主题切换 + 移动端菜单 -->
+      <div class="nav-actions">
+        <div class="lang-pill" aria-label="语言切换">
+          <a href="../index.html" class="lang-pill-item" title="Switch to English">EN</a>
+          <span class="lang-pill-item active">中</span>
+        </div>
+        <button id="theme-toggle" class="nav-btn theme-toggle-btn" aria-label="切换深色模式">
+          <span id="theme-icon"></span>
+        </button>
+        <button id="mobile-menu-btn" class="nav-btn mobile-menu-btn" aria-label="展开导航菜单">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主体容器 -->
+  <main class="container">
+    
+    <!-- Hero 区域 -->
+    <section class="hero-section">
+      <div class="hero-wrapper">
+        <div class="hero-avatar-box">
+          <img src="../assets/images/avatar.jpg" alt="黄瀚祺" class="hero-avatar">
+        </div>
+        <div class="hero-content">
+          <div class="hero-eyebrow">香港大学计算机硕士 · AI 与材料信息学 · 全栈工程</div>
+          <h1 class="hero-name">黄瀚祺 (Hanqi Huang)</h1>
+          <p class="hero-tagline">“沉稳自律，以数据说话，以结果验证。”</p>
+          
+          <p class="hero-bio">
+            <strong>香港大学（HKU）</strong>计算机科学专业硕士在读，本科毕业于<strong>澳门理工大学</strong>计算机科学专业（<strong>专业前5，GPA 3.67/4.0</strong>，荣获霍英东基金会奖学金，雅思7分）。
+            热衷于连接学术科研与工业级落地系统：深耕<strong>大模型与 RAG 智能体系统</strong>、<strong>高通量材料信息学（DFT 第一性原理 + 晶体图神经网络 CGCNN）</strong>以及<strong>企业级前后端全栈工程开发</strong>。
+          </p>
+
+          <div class="hero-links">
+            <a href="mailto:huanghanqi1123@163.com" class="btn btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              发送邮件
+            </a>
+            <a href="https://github.com/Hanson5732" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+            <a href="https://doi.org/10.1109/ICCEIC67916.2025.11309165" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+              IEEE 论文收录
+            </a>
+            <a href="../assets/docs/HUANG_Hanqi_CV_CN.pdf" target="_blank" class="btn btn-outline">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="15" y2="15"></line></svg>
+              下载中文简历 (PDF)
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 最新动态 -->
+    <section class="content-section">
+      <h2 class="section-title">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+        最新动态与历程
+      </h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <span class="timeline-time">2026.09 - 至今</span>
+          <div class="timeline-body">
+            <h3 class="timeline-heading">入读香港大学计算机科学硕士 (QS #11)</h3>
+            <p>就读于香港大学计算机科学专业，提前修满学分，重点聚焦大语言模型、分布式检索与高性能系统。</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <span class="timeline-time">2025.10</span>
+          <div class="timeline-body">
+            <h3 class="timeline-heading">学术论文在 IEEE ICCEIC 2025 正式发表收录</h3>
+            <p>RAG 领域学术论文 <em>《HypoSelectSimRAG: Enhancing Answer Accuracy in RAG via Multi-Path Self-Consistent Query Translation》</em> 正式发表并收录于 IEEE Xplore。</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <span class="timeline-time">2025.08 - 2026.04</span>
+          <div class="timeline-body">
+            <h3 class="timeline-heading">在 ArchLinux 超算集群完成材料图神经网络毕业设计</h3>
+            <p>独立搭建高通量 DFT 流水线，应用晶体图神经网络（CGCNN）预测功能材料电子性质，费米能级预测 $R^2 = 0.9635$。</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <span class="timeline-time">2024 - 2025</span>
+          <div class="timeline-body">
+            <h3 class="timeline-heading">荣获澳门霍英东基金会奖学金</h3>
+            <p>澳门理工大学计算机科学专业排名前 5（GPA 3.67/4.0），获评澳门霍英东基金会优秀学业奖学金。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 重点论文 -->
+    <section class="content-section">
+      <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:1.5rem; flex-wrap:wrap; gap:0.5rem;">
+        <h2 class="section-title" style="margin-bottom:0; border-bottom:none; padding-bottom:0;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          重点学术论文
+        </h2>
+        <a href="publications.html" style="font-size:0.92rem; font-weight:600;">
+          查看全部学术成果 &rarr;
+        </a>
+      </div>
+
+      <div class="publication-card">
+        <div class="pub-header">
+          <h3 class="pub-title">HypoSelectSimRAG: Enhancing Answer Accuracy in RAG via Multi-Path Self-Consistent Query Translation</h3>
+          <span class="pub-badge">IEEE ICCEIC 2025</span>
+        </div>
+        <p class="pub-authors">
+          Z. Chen, <span class="pub-author-me">黄瀚祺 (Hanqi Huang)</span>, J. Wu, et al.
+        </p>
+        <p class="pub-venue">第六届计算机工程与智能控制国际会议 (ICCEIC 2025), IEEE 收录</p>
+        
+        <p class="pub-abstract">
+          针对传统 RAG 面对非规范查询时检索噪声高、易产生幻觉的问题，提出多路径虚拟文档生成与温度调控自一致性筛选模型。在 rag-dataset-1200 基准集上经 RAGAS 评测，事实准确率（Factual Correctness）大幅提高至 <strong>0.6910</strong>，显著优于朴素 RAG（0.5257）与 HyDE（0.6178）。
+        </p>
+
+        <div class="pub-actions">
+          <a href="https://doi.org/10.1109/ICCEIC67916.2025.11309165" target="_blank" class="btn btn-primary">
+            DOI: 10.1109/ICCEIC67916.2025.11309165
+          </a>
+          <a href="../assets/docs/HypoSelectSimRAG_Paper.pdf" target="_blank" class="btn btn-outline">
+            论文全文 (PDF)
+          </a>
+          <a href="posts.html" class="btn btn-outline">
+            解析笔记
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 精选项目 -->
+    <section class="content-section">
+      <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:1.5rem; flex-wrap:wrap; gap:0.5rem;">
+        <h2 class="section-title" style="margin-bottom:0; border-bottom:none; padding-bottom:0;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+          精选项目经历
+        </h2>
+        <a href="projects.html" style="font-size:0.92rem; font-weight:600;">
+          查看全部项目 &rarr;
+        </a>
+      </div>
+
+      <div class="projects-grid">
+        <!-- 项目 1 -->
+        <div class="project-card">
+          <div class="project-category">材料信息学 · 毕业设计</div>
+          <h3>基于高通量计算与机器学习研究物质电子性质</h3>
+          <span class="project-time">2025.08 - 2026.04</span>
+          <p class="project-desc">
+            在 ArchLinux 超算集群上利用 VASP + Pymatgen 构建四阶段高通量 DFT 流水线，计算数千种钙钛矿晶体。CGCNN 晶体图神经网络在费米能级预测达 $R^2=0.9635$、带隙达 $R^2=0.9584$。
+          </p>
+          <div class="project-tags">
+            <span class="tag">PyTorch</span>
+            <span class="tag">CGCNN</span>
+            <span class="tag">VASP / DFT</span>
+            <span class="tag">ArchLinux 超算</span>
+          </div>
+          <div class="project-links">
+            <a href="../assets/docs/Materials_ML_Paper.pdf" target="_blank" class="btn btn-outline" style="padding: 4px 10px; font-size: 0.82rem;">论文报告</a>
+            <a href="posts.html" class="btn btn-outline" style="padding: 4px 10px; font-size: 0.82rem;">深度解析</a>
+          </div>
+        </div>
+
+        <!-- 项目 2 -->
+        <div class="project-card">
+          <div class="project-category">企业级 AI · 达衍数据</div>
+          <h3>玻璃厂 AI 智能制单与结构化抽取系统</h3>
+          <span class="project-time">2025.06 - 2025.08</span>
+          <p class="project-desc">
+            针对工业单据格式多变特征，采用 pdfplumber + AI OCR 兜底 + 私有化 Dify 大模型微调提示工程，结合 Few-Shot 与 CoT 规范化玻璃型号，<strong>制单效率提升 87.5%</strong>，兼容 8 家厂商复杂 PDF 输入。
+          </p>
+          <div class="project-tags">
+            <span class="tag">Flask</span>
+            <span class="tag">Dify 平台</span>
+            <span class="tag">Few-Shot CoT</span>
+            <span class="tag">pandas</span>
+          </div>
+          <div class="project-links">
+            <a href="about.html#internships" class="btn btn-outline" style="padding: 4px 10px; font-size: 0.82rem;">查看实习履历</a>
+          </div>
+        </div>
+
+        <!-- 项目 3 -->
+        <div class="project-card">
+          <div class="project-category">金融全栈工程 · 顺德农商银行</div>
+          <h3>企业金融绿色白名单管理与校验系统</h3>
+          <span class="project-time">2026.07 - 2026.08</span>
+          <p class="project-desc">
+            负责企业金融核心白名单模块。以 EasyExcel 流式读写杜绝大文件内存溢出（OOM）；为 3 表交叉校验优化组合索引，查询降至毫秒级；实现 Spring Task 定时同步与阿里云 OSS 入库。
+          </p>
+          <div class="project-tags">
+            <span class="tag">React</span>
+            <span class="tag">SOFABoot</span>
+            <span class="tag">Redis</span>
+            <span class="tag">MySQL</span>
+          </div>
+          <div class="project-links">
+            <a href="about.html#internships" class="btn btn-outline" style="padding: 4px 10px; font-size: 0.82rem;">查看实习履历</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div>
+        &copy; 2026 黄瀚祺 (Hanqi Huang). Hosted on GitHub Pages.
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/Hanson5732" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:huanghanqi1123@163.com">邮箱</a>
+        <a href="about.html">关于我</a>
+        <a href="../assets/docs/HUANG_Hanqi_CV_CN.pdf" target="_blank">中文简历</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js?v=2.0"></script>
+</body>
+</html>

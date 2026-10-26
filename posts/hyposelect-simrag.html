@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-lang="en">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,18 +7,7 @@
   <meta name="description" content="Technical walkthrough of HypoSelectSimRAG published in IEEE ICCEIC 2025 by Hanqi Huang and co-authors.">
   <link rel="icon" type="image/jpeg" href="../assets/images/avatar.jpg">
 
-  <!-- Prevent flash of unstyled theme or language -->
-  <script>
-    (function() {
-      var savedLang = localStorage.getItem('site_lang') || 'en';
-      document.documentElement.setAttribute('data-lang', savedLang);
-      document.documentElement.setAttribute('lang', savedLang === 'zh' ? 'zh-CN' : 'en');
-      var savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', savedTheme);
-    })();
-  </script>
-
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/style.css?v=2.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
@@ -33,38 +22,26 @@
         <img src="../assets/images/avatar.jpg" alt="Hanqi Huang" class="nav-avatar">
         <div class="nav-title-group">
           <span class="nav-name">Hanqi Huang</span>
-          <span class="nav-sub">黄瀚祺 · HKU CS</span>
+          <span class="nav-sub">HKU CS</span>
         </div>
       </a>
 
       <!-- Navigation Links -->
       <ul class="nav-links" id="nav-links">
-        <li class="nav-link"><a href="../index.html">
-          <span class="lang-en">Home</span><span class="lang-zh">首页</span>
-        </a></li>
-        <li class="nav-link"><a href="../about.html">
-          <span class="lang-en">About</span><span class="lang-zh">关于我</span>
-        </a></li>
-        <li class="nav-link"><a href="../projects.html">
-          <span class="lang-en">Projects</span><span class="lang-zh">精选项目</span>
-        </a></li>
-        <li class="nav-link"><a href="../publications.html">
-          <span class="lang-en">Publications</span><span class="lang-zh">学术成果</span>
-        </a></li>
-        <li class="nav-link active"><a href="../posts.html">
-          <span class="lang-en">Posts</span><span class="lang-zh">文章笔记</span>
-        </a></li>
-        <li class="nav-link">
-          <a href="../assets/docs/HUANG_Hanqi_CV.pdf" target="_blank" class="lang-en">CV</a>
-          <a href="../assets/docs/HUANG_Hanqi_CV_CN.pdf" target="_blank" class="lang-zh">中文简历</a>
-        </li>
+        <li class="nav-link"><a href="../index.html">Home</a></li>
+        <li class="nav-link"><a href="../about.html">About</a></li>
+        <li class="nav-link"><a href="../projects.html">Projects</a></li>
+        <li class="nav-link"><a href="../publications.html">Publications</a></li>
+        <li class="nav-link active"><a href="../posts.html">Posts</a></li>
+        <li class="nav-link"><a href="../assets/docs/HUANG_Hanqi_CV.pdf" target="_blank">CV</a></li>
       </ul>
 
       <!-- Action buttons -->
       <div class="nav-actions">
-        <button id="lang-toggle" class="nav-btn lang-toggle-btn" aria-label="Switch Language" title="Switch English / 中文">
-          <span class="lang-text">中文</span>
-        </button>
+        <div class="lang-pill" aria-label="Language selection">
+          <span class="lang-pill-item active">EN</span>
+          <a href="../zh/posts.html" class="lang-pill-item" title="切换到中文版">中</a>
+        </div>
         <button id="theme-toggle" class="nav-btn theme-toggle-btn" aria-label="Toggle dark mode">
           <span id="theme-icon"></span>
         </button>
@@ -80,10 +57,7 @@
     <div class="article-content">
       
       <div style="margin-bottom: 1.5rem;">
-        <a href="../posts.html" style="font-size:0.9rem; font-weight:600;">
-          <span class="lang-en">&larr; Back to all posts</span>
-          <span class="lang-zh">&larr; 返回所有文章</span>
-        </a>
+        <a href="../posts.html" style="font-size:0.9rem; font-weight:600;">&larr; Back to all posts</a>
       </div>
 
       <header class="article-header" style="padding-top: 0;">
@@ -96,7 +70,7 @@
         </div>
         <h1 class="article-title">HypoSelectSimRAG: Enhancing Answer Accuracy in RAG via Multi-Path Self-Consistent Query Translation</h1>
         <p style="font-size: 1.05rem; color: var(--text-light); font-style: italic;">
-          By Zhi Chen, <strong>Hanqi Huang (黄瀚祺)</strong>, Junjie Wu, et al.
+          By Zhi Chen, <strong>Hanqi Huang</strong>, Junjie Wu, et al.
         </p>
       </header>
 
@@ -179,20 +153,17 @@
   <footer class="site-footer">
     <div class="container footer-content">
       <div>
-        &copy; 2026 Hanqi Huang (黄瀚祺). Hosted on GitHub Pages.
+        &copy; 2026 Hanqi Huang. Hosted on GitHub Pages.
       </div>
       <div class="footer-links">
         <a href="https://github.com/Hanson5732" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="mailto:huanghanqi1123@163.com">Email</a>
-        <a href="../about.html">
-          <span class="lang-en">About</span><span class="lang-zh">关于</span>
-        </a>
-        <a href="../assets/docs/HUANG_Hanqi_CV.pdf" target="_blank" class="lang-en">CV</a>
-        <a href="../assets/docs/HUANG_Hanqi_CV_CN.pdf" target="_blank" class="lang-zh">中文简历</a>
+        <a href="../about.html">About</a>
+        <a href="../assets/docs/HUANG_Hanqi_CV.pdf" target="_blank">CV</a>
       </div>
     </div>
   </footer>
 
-  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/main.js?v=2.0"></script>
 </body>
 </html>

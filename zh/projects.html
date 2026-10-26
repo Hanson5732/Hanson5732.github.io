@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>精选项目与科研 | 黄瀚祺</title>
+  <meta name="description" content="黄瀚祺的项目研发与学术探索：大语言模型智能体、高通量材料信息学、全栈架构与系统工程。">
+  <link rel="icon" type="image/jpeg" href="../assets/images/avatar.jpg">
+
+  <link rel="stylesheet" href="../assets/css/style.css?v=2.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+</head>
+<body>
+
+  <!-- 顶部导航栏 -->
+  <header class="site-header">
+    <div class="container site-nav">
+      <a href="index.html" class="nav-brand">
+        <img src="../assets/images/avatar.jpg" alt="黄瀚祺" class="nav-avatar">
+        <div class="nav-title-group">
+          <span class="nav-name">黄瀚祺</span>
+          <span class="nav-sub">香港大学 CS</span>
+        </div>
+      </a>
+
+      <!-- 导航链接 -->
+      <ul class="nav-links" id="nav-links">
+        <li class="nav-link"><a href="index.html">首页</a></li>
+        <li class="nav-link"><a href="about.html">关于我</a></li>
+        <li class="nav-link"><a href="projects.html">精选项目</a></li>
+        <li class="nav-link"><a href="publications.html">学术成果</a></li>
+        <li class="nav-link"><a href="posts.html">文章笔记</a></li>
+        <li class="nav-link">
+          <a href="../assets/docs/HUANG_Hanqi_CV_CN.pdf" target="_blank">中文简历</a>
+        </li>
+      </ul>
+
+      <!-- 右侧控制区：顶部语言切换 [ EN | 中 ] + 主题切换 + 移动端菜单 -->
+      <div class="nav-actions">
+        <div class="lang-pill" aria-label="语言切换">
+          <a href="../projects.html" class="lang-pill-item" title="Switch to English">EN</a>
+          <span class="lang-pill-item active">中</span>
+        </div>
+        <button id="theme-toggle" class="nav-btn theme-toggle-btn" aria-label="切换深色模式">
+          <span id="theme-icon"></span>
+        </button>
+        <button id="mobile-menu-btn" class="nav-btn mobile-menu-btn" aria-label="展开导航菜单">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 内容区 -->
+  <main class="container" style="padding-top: 2.5rem; padding-bottom: 4rem;">
+    <div style="margin-bottom: 2rem;">
+      <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">精选项目与科研探索</h1>
+      <p style="color: var(--text-muted); font-size: 1.05rem;">
+        涵盖大语言模型智能体架构、晶体图神经网络、高通量超算计算以及企业级前后端工程的核心代表性项目。
+      </p>
+
+      <!-- 分类筛选按钮 -->
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1.25rem;">
+        <button class="btn btn-primary filter-btn" data-filter="all">全部项目</button>
+        <button class="btn btn-outline filter-btn" data-filter="ai-llm">AI 与大模型</button>
+        <button class="btn btn-outline filter-btn" data-filter="materials-ml">材料信息学与超算</button>
+        <button class="btn btn-outline filter-btn" data-filter="fullstack">全栈工程与系统</button>
+      </div>
+    </div>
+
+    <!-- 项目卡片网格 -->
+    <div class="projects-grid">
+      
+      <!-- 项目 1: 材料信息学 -->
+      <div class="project-card" data-category="materials-ml">
+        <div class="project-category">材料信息学 · 毕业设计</div>
+        <h3>基于高通量计算与机器学习研究物质电子性质</h3>
+        <span class="project-time">2025.08 - 2026.04 · 澳门理工大学</span>
+        <p class="project-desc">
+          在 ArchLinux 超算集群上利用 VASP + Pymatgen 构建四阶段自动化 DFT 高通量计算流水线，处理 2,598 种钙钛矿与霍斯勒晶体结构。对比图模型与表格树模型：CGCNN 在费米能级达 $R^2=0.9635$、带隙达 $R^2=0.9584$，揭示了全局晶格拓扑主导电子性质的物理规律。
+        </p>
+        <div class="project-tags">
+          <span class="tag">PyTorch</span>
+          <span class="tag">CGCNN</span>
+          <span class="tag">VASP / DFT</span>
+          <span class="tag">Pymatgen</span>
+          <span class="tag">ArchLinux 超算</span>
+          <span class="tag">XGBoost</span>
+        </div>
+        <div class="project-links">
+          <a href="../assets/docs/Materials_ML_Paper.pdf" target="_blank" class="btn btn-outline" style="padding: 4px 10px; font-size: 0.82rem;">论文报告 (PDF)</a>
+          <a href="posts.html" class="btn btn-outline" style="padding: 4px 10px; font-size: 0.82rem;">深度解析</a>
+        </div>
+      </div>
+
+      <!-- 项目 2: HypoSelectSimRAG -->
+      <div class="project-card" data-category="ai-llm">
+        <div class="project-category">AI 与大模型 · 学术会议论文</div>
+        <h3>HypoSelectSimRAG: 基于多路径自一致性查询转换的 RAG 模型</h3>
+        <span class="project-time">2025.03 - 2025.08 · 发表收录于 IEEE ICCEIC 2025</span>
+        <p class="project-desc">
+          设计多路径虚拟文档生成与温度控制（0.1 / 1.1）策略，平衡生成准确性与多样性；对比自一致性投票、评分、向量均值等5种筛选算法，选出与原始查询余弦相似度最高的最优文档投入稠密检索。在 RAGAS 基准评测中，事实准确率大幅提升至 <strong>0.6910</strong>（标准 RAG 为 0.5257）。
+        </p>
+        <div class="project-tags">
+          <span class="tag">LangChain</span>
+          <span class="tag">LangSmith</span>
+          <span class="tag">Ragas</span>
+          <span class="tag">LLM Prompting</span>
+          <span class="tag">IEEE Xplore</span>
+        </div>
+        <div class="project-links">
+          <a href="https://doi.org/10.1109/ICCEIC67916.2025.11309165" target="_blank" class="btn btn-outline" style="padding: 4px 10px; font-size: 0.82rem;">IEEE 链接</a>
+          <a href="../assets/docs/HypoSelectSimRAG_Paper.pdf" target="_blank" class="btn btn-outline" style="padding: 4px 10px; font-size: 0.82rem;">论文原文</a>
+          <a href="posts.html" class="btn btn-outline" style="padding: 4px 10px; font-size: 0.82rem;">解析笔记</a>
+        </div>
+      </div>
+
+      <!-- 项目 3: 玻璃厂 AI 制单系统 -->
+      <div class="project-card" data-category="ai-llm fullstack">
+        <div class="project-category">工业级智能落地 · 达衍数据</div>
+        <h3>玻璃厂 AI 智能制单与结构化抽取系统</h3>
+        <span class="project-time">2025.06 - 2025.08 · 核心负责人</span>
+        <p class="project-desc">
+          梳理行业差异，放弃高昂 CV 训练，采用 pdfplumber + AI OCR 兜底 + LLM 结构化抽取路线。私有化部署 Dify 搭建专属工艺知识库，结合 Few-Shot + CoT 提示词精准规范玻璃型号，<strong>制单效率提升 87.5%</strong>，稳定支持 8 家厂商复杂 PDF 输入。
+        </p>
+        <div class="project-tags">
+          <span class="tag">Flask</span>
+          <span class="tag">Dify 平台</span>
+          <span class="tag">DeepSeek API</span>
+          <span class="tag">pdfplumber</span>
+          <span class="tag">Few-Shot CoT</span>
+        </div>
+        <div class="project-links">
+          <a href="about.html#internships" class="btn btn-outline" style="padding: 4px 10px; font-size: 0.82rem;">查看实习履历</a>
+        </div>
+      </div>
+
+      <!-- 项目 4: 绿色银行白名单 -->
+      <div class="project-card" data-category="fullstack">
+        <div class="project-category">金融全栈工程 · 顺德农商银行</div>
+        <h3>企业金融绿色白名单管理与校验系统</h3>
+        <span class="project-time">2026.07 - 2026.08 · 全栈开发</span>
+        <p class="project-desc">
+          以 EasyExcel 流式处理大体积 Excel 导入导出，杜绝内存溢出；为多表关联查询联合建立组合索引，将跨表校验从秒级降至毫秒级；基于 Spring Task 实现阿里云 OSS 文件自动同步与容错重试。
+        </p>
+        <div class="project-tags">
+          <span class="tag">React</span>
+          <span class="tag">Ant Design</span>
+          <span class="tag">SOFABoot</span>
+          <span class="tag">Redis</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">阿里云 OSS</span>
+        </div>
+        <div class="project-links">
+          <a href="about.html#internships" class="btn btn-outline" style="padding: 4px 10px; font-size: 0.82rem;">查看实习履历</a>
+        </div>
+      </div>
+
+      <!-- 项目 5: 外贸邮件回复 Agent -->
+      <div class="project-card" data-category="ai-llm">
+        <div class="project-category">智能体架构 · 达衍数据</div>
+        <h3>外贸智能多轮邮件回复与问答 Agent</h3>
+        <span class="project-time">2025.07 - 2025.08</span>
+        <p class="project-desc">
+          在 Dify 平台设计基于行业产品手册的 RAG 知识检索与智能体工作流。结合意图识别、Few-Shot 提示工程与指令跟随，实现高拟人化多语种外贸商机邮件自动分类与草稿起草。
+        </p>
+        <div class="project-tags">
+          <span class="tag">Dify Agent</span>
+          <span class="tag">RAG</span>
+          <span class="tag">提示工程</span>
+          <span class="tag">客户支持自动化</span>
+        </div>
+        <div class="project-links">
+          <a href="about.html#internships" class="btn btn-outline" style="padding: 4px 10px; font-size: 0.82rem;">查看实习履历</a>
+        </div>
+      </div>
+
+      <!-- 项目 6: 电商平台 -->
+      <div class="project-card" data-category="fullstack">
+        <div class="project-category">前后端分离平台 · 团队负责人</div>
+        <h3>基于 Vue3 + Django 的综合电商平台</h3>
+        <span class="project-time">2025.01 - 2025.04 · 负责人兼核心开发</span>
+        <p class="project-desc">
+          担任课程团队负责人兼主程序员，完成前后端分离电商系统全流程设计与开发。编写全部 API 文档，构建商品浏览、购物车、结算与评价模块；集成 SimpleJWT 加密鉴权、SQL 注入防御与谷歌 reCAPTCHA 人机验证中间件。
+        </p>
+        <div class="project-tags">
+          <span class="tag">Vue 3</span>
+          <span class="tag">Django REST</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">SimpleJWT</span>
+          <span class="tag">reCAPTCHA</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/Hanson5732" target="_blank" class="btn btn-outline" style="padding: 4px 10px; font-size: 0.82rem;">GitHub / Hanson5732</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div>
+        &copy; 2026 黄瀚祺 (Hanqi Huang). Hosted on GitHub Pages.
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/Hanson5732" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:huanghanqi1123@163.com">邮箱</a>
+        <a href="about.html">关于我</a>
+        <a href="../assets/docs/HUANG_Hanqi_CV_CN.pdf" target="_blank">中文简历</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js?v=2.0"></script>
+</body>
+</html>

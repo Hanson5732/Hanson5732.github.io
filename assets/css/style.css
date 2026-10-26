@@ -57,47 +57,6 @@
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
 }
 
-/* ==========================================================================
-   Language Visibility Rules (Default: English, Optional: Chinese)
-   ========================================================================== */
-html[data-lang="en"] .lang-zh {
-  display: none !important;
-}
-html[data-lang="en"] .lang-en {
-  display: inline;
-}
-html[data-lang="en"] blockquote.lang-en,
-html[data-lang="en"] div.lang-en,
-html[data-lang="en"] p.lang-en,
-html[data-lang="en"] section.lang-en,
-html[data-lang="en"] ul.lang-en,
-html[data-lang="en"] ol.lang-en {
-  display: block !important;
-}
-html[data-lang="en"] .btn.lang-en,
-html[data-lang="en"] a.lang-en {
-  display: inline-flex !important;
-}
-
-html[data-lang="zh"] .lang-en {
-  display: none !important;
-}
-html[data-lang="zh"] .lang-zh {
-  display: inline;
-}
-html[data-lang="zh"] blockquote.lang-zh,
-html[data-lang="zh"] div.lang-zh,
-html[data-lang="zh"] p.lang-zh,
-html[data-lang="zh"] section.lang-zh,
-html[data-lang="zh"] ul.lang-zh,
-html[data-lang="zh"] ol.lang-zh {
-  display: block !important;
-}
-html[data-lang="zh"] .btn.lang-zh,
-html[data-lang="zh"] a.lang-zh {
-  display: inline-flex !important;
-}
-
 /* Base resets & overflow safety */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -264,6 +223,41 @@ img, svg {
   flex-shrink: 0;
 }
 
+/* Segmented Language Switcher Pill [ EN | 中 ] */
+.lang-pill {
+  display: inline-flex;
+  align-items: center;
+  background: var(--card-subtle);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 2px;
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.lang-pill-item {
+  padding: 5px 9px;
+  border-radius: 16px;
+  color: var(--text-light);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.lang-pill-item.active {
+  background: var(--primary);
+  color: #ffffff !important;
+  cursor: default;
+  box-shadow: var(--shadow-sm);
+}
+
+.lang-pill-item:not(.active):hover {
+  color: var(--primary);
+  text-decoration: none;
+}
+
 .nav-btn {
   background: var(--card-bg);
   border: 1px solid var(--border-color);
@@ -276,7 +270,7 @@ img, svg {
   justify-content: center;
   font-size: 0.85rem;
   transition: all 0.2s;
-  height: 36px;
+  height: 34px;
 }
 
 .nav-btn:hover {
@@ -285,23 +279,15 @@ img, svg {
   border-color: var(--border-hover);
 }
 
-.lang-toggle-btn {
-  font-family: var(--font-mono);
-  font-weight: 700;
-  font-size: 0.8rem;
-  padding: 6px 10px;
-  letter-spacing: 0.02em;
-}
-
 .theme-toggle-btn {
   padding: 7px;
-  width: 36px;
+  width: 34px;
 }
 
 .mobile-menu-btn {
   display: none;
   padding: 7px;
-  width: 36px;
+  width: 34px;
 }
 
 /* Hero Section (Home) */

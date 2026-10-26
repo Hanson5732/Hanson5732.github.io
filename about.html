@@ -1,25 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" data-lang="en">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About | Hanqi Huang (黄瀚祺)</title>
-  <meta name="description" content="About Hanqi Huang (黄瀚祺) - Biography, Education, Publications, Research and Experience.">
+  <title>About | Hanqi Huang</title>
+  <meta name="description" content="About Hanqi Huang - Biography, Education, Publications, Research and Experience.">
   <link rel="icon" type="image/jpeg" href="assets/images/avatar.jpg">
 
-  <!-- Prevent flash of unstyled theme or language -->
-  <script>
-    (function() {
-      var savedLang = localStorage.getItem('site_lang') || 'en';
-      document.documentElement.setAttribute('data-lang', savedLang);
-      document.documentElement.setAttribute('lang', savedLang === 'zh' ? 'zh-CN' : 'en');
-      var savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', savedTheme);
-    })();
-  </script>
-
-  <link rel="stylesheet" href="assets/css/style.css">
-  <!-- KaTeX for math formulas -->
+  <link rel="stylesheet" href="assets/css/style.css?v=2.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
@@ -34,7 +22,7 @@
         <img src="assets/images/avatar.jpg" alt="Hanqi Huang" class="nav-avatar">
         <div class="nav-title-group">
           <span class="nav-name">Hanqi Huang</span>
-          <span class="nav-sub">黄瀚祺 · HKU CS</span>
+          <span class="nav-sub">HKU CS</span>
         </div>
       </a>
 
@@ -42,41 +30,38 @@
       <ul class="nav-links" id="nav-links">
         <li class="nav-link"><a href="index.html">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-          <span class="lang-en">Home</span><span class="lang-zh">首页</span>
+          Home
         </a></li>
         <li class="nav-link"><a href="about.html">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-          <span class="lang-en">About</span><span class="lang-zh">关于我</span>
+          About
         </a></li>
         <li class="nav-link"><a href="projects.html">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-          <span class="lang-en">Projects</span><span class="lang-zh">精选项目</span>
+          Projects
         </a></li>
         <li class="nav-link"><a href="publications.html">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-          <span class="lang-en">Publications</span><span class="lang-zh">学术成果</span>
+          Publications
         </a></li>
         <li class="nav-link"><a href="posts.html">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          <span class="lang-en">Posts</span><span class="lang-zh">文章笔记</span>
+          Posts
         </a></li>
         <li class="nav-link">
-          <a href="assets/docs/HUANG_Hanqi_CV.pdf" target="_blank" class="lang-en">
+          <a href="assets/docs/HUANG_Hanqi_CV.pdf" target="_blank">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
             CV
-          </a>
-          <a href="assets/docs/HUANG_Hanqi_CV_CN.pdf" target="_blank" class="lang-zh">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-            中文简历
           </a>
         </li>
       </ul>
 
       <!-- Action buttons -->
       <div class="nav-actions">
-        <button id="lang-toggle" class="nav-btn lang-toggle-btn" aria-label="Switch Language" title="Switch English / 中文">
-          <span class="lang-text">中文</span>
-        </button>
+        <div class="lang-pill" aria-label="Language selection">
+          <span class="lang-pill-item active">EN</span>
+          <a href="zh/about.html" class="lang-pill-item" title="切换到中文版">中</a>
+        </div>
         <button id="theme-toggle" class="nav-btn theme-toggle-btn" aria-label="Toggle dark mode">
           <span id="theme-icon"></span>
         </button>
@@ -87,7 +72,7 @@
     </div>
   </header>
 
-  <!-- About Page Container with Sidebar Layout -->
+  <!-- About Page Container with Sidebar Layout (ngaizean.com style) -->
   <main class="container">
     <div class="about-page-wrapper">
       
@@ -96,18 +81,15 @@
         <div class="sidebar-content">
           <img src="assets/images/avatar.jpg" alt="Hanqi Huang" class="sidebar-avatar">
           <h1 class="sidebar-name">Hanqi Huang</h1>
-          <div class="sidebar-name-cn">黄瀚祺</div>
           
           <div class="sidebar-affiliation">
             The University of Hong Kong<br>
-            <span style="font-size:0.82rem; color:var(--text-light);" class="lang-en">(MSc in Computer Science)</span>
-            <span style="font-size:0.82rem; color:var(--text-light);" class="lang-zh">(计算机科学硕士在读)</span>
+            <span style="font-size:0.82rem; color:var(--text-light);">(MSc in Computer Science)</span>
           </div>
 
           <div class="sidebar-location">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-            <span class="lang-en">Hong Kong & Macao</span>
-            <span class="lang-zh">中国香港 · 中国澳门</span>
+            <span>Hong Kong & Macao</span>
           </div>
 
           <div class="sidebar-links">
@@ -125,13 +107,7 @@
             </a>
             <a href="assets/docs/HUANG_Hanqi_CV.pdf" target="_blank" class="sidebar-link">
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-              <span class="lang-en">Resume / CV (English)</span>
-              <span class="lang-zh">英文简历 (PDF)</span>
-            </a>
-            <a href="assets/docs/HUANG_Hanqi_CV_CN.pdf" target="_blank" class="sidebar-link">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-              <span class="lang-en">Chinese Resume (PDF)</span>
-              <span class="lang-zh">中文简历 (PDF)</span>
+              <span>Resume / CV (PDF)</span>
             </a>
           </div>
         </div>
@@ -144,11 +120,9 @@
         <section id="about" class="content-section">
           <h2 class="section-title">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-            <span class="lang-en">About Me</span><span class="lang-zh">自我介绍 / About Me</span>
+            About Me
           </h2>
-
-          <!-- English Narrative -->
-          <div class="about-bio lang-en">
+          <div class="about-bio">
             <p>
               I am an incoming graduate student in Computer Science at <strong>The University of Hong Kong (HKU)</strong>, having earned my Bachelor of Science degree in Computer Science from <strong>Macao Polytechnic University</strong> (ranked in the <strong>Top 5</strong> with a 3.67/4.0 GPA, recipient of the 2024–2025 Macao Fok Ying Tung Foundation Scholarship).
             </p>
@@ -162,89 +136,53 @@
               Beyond academia and engineering, sports and music form the core rhythm of my daily life. Regular physical training keeps me composed under pressure, sharpening my patience, focus, and resilience. Whether tackling hard research questions or navigating fast-moving LLM ecosystems, I enjoy learning proactively, communicating with clarity, and delivering meaningful solutions with team partners.
             </p>
           </div>
-
-          <!-- Chinese Narrative -->
-          <div class="about-bio lang-zh">
-            <p>
-              我目前是<strong>香港大学（HKU）</strong>计算机科学专业硕士在读，本科毕业于<strong>澳门理工大学</strong>计算机科学专业（<strong>专业前5，GPA 3.67/4.0</strong>，荣获2024-2025学年澳门霍英东基金会奖学金，雅思7分）。
-            </p>
-            <p>
-              我具备扎实的计算机基础与动手能力，科研兴趣聚焦于<strong>大语言模型检索增强生成（RAG）、智能体架构与高通量材料信息学</strong>。作为核心作者在 <strong>IEEE ICCEIC 2025</strong> 发表了关于多路径自一致性查询转换提高 RAG 精度的学术论文；在毕业设计中，我独立在 ArchLinux 超算集群上完成了高通量 DFT 计算全流程，利用晶体图神经网络（CGCNN）实现了材料费米能级与带隙的高精度预测。
-            </p>
-            <div class="quote-box">
-              “我性格沉稳自律、做事讲求计划与条理。面对压力先分析问题再动手解决；既能在超算集群上跑模型，也能撰写中英文论文与工业落地架构，习惯用数据说话、以结果验证。”
-            </div>
-            <p>
-              课余生活里，运动、音乐与旅行是我保持充沛精力与好奇心的源泉。长期自律的体育锻炼极大磨砺了我的耐力、心态与韧性。在团队中，我乐于倾听、善于沟通，曾作为负责人带领课程项目攻关，始终坚持将团队的共同成功置于个人表现之前。
-            </p>
-          </div>
         </section>
 
         <!-- News Section -->
         <section id="news" class="content-section">
           <h2 class="section-title">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
-            <span class="lang-en">News & Timeline</span><span class="lang-zh">动态与里程碑</span>
+            News & Timeline
           </h2>
           <div class="timeline">
             <div class="timeline-item">
               <div class="timeline-dot"></div>
               <span class="timeline-time">2026.09 - 2027.08</span>
               <div class="timeline-body">
-                <h3 class="timeline-heading">
-                  <span class="lang-en">Enrolled at The University of Hong Kong (HKU)</span>
-                  <span class="lang-zh">入读香港大学计算机科学硕士</span>
-                </h3>
-                <p class="lang-en">Master of Science in Computer Science (QS World Ranking #11). Completing full curriculum with high efficiency.</p>
-                <p class="lang-zh">就读于香港大学（QS世界排名第11）计算机科学硕士专业，提前一年修满学分，深入钻研前沿 AI 与系统软件。</p>
+                <h3 class="timeline-heading">Enrolled at The University of Hong Kong (HKU)</h3>
+                <p>Master of Science in Computer Science (QS World Ranking #11). Completing full curriculum with high efficiency.</p>
               </div>
             </div>
             <div class="timeline-item">
               <div class="timeline-dot"></div>
               <span class="timeline-time">2026.07 - 2026.08</span>
               <div class="timeline-body">
-                <h3 class="timeline-heading">
-                  <span class="lang-en">Full-Stack Engineer Intern at Shunde Rural Commercial Bank</span>
-                  <span class="lang-zh">顺德农村商业银行 · 全栈工程师实习</span>
-                </h3>
-                <p class="lang-en">Engineered core enterprise green banking modules using React, SOFABoot, Redis, and MySQL.</p>
-                <p class="lang-zh">负责企业金融绿色白名单管理系统核心模块开发，采用 React + SOFABoot + Redis + MySQL。</p>
+                <h3 class="timeline-heading">Full-Stack Engineer Intern at Shunde Rural Commercial Bank</h3>
+                <p>Engineered core enterprise green banking modules using React, SOFABoot, Redis, and MySQL.</p>
               </div>
             </div>
             <div class="timeline-item">
               <div class="timeline-dot"></div>
               <span class="timeline-time">2025.10</span>
               <div class="timeline-body">
-                <h3 class="timeline-heading">
-                  <span class="lang-en">Paper Published in IEEE ICCEIC 2025</span>
-                  <span class="lang-zh">科研论文在 IEEE ICCEIC 2025 发表收录</span>
-                </h3>
-                <p class="lang-en">Research paper <em>"HypoSelectSimRAG: Enhancing Answer Accuracy in RAG via Multi-Path Self-Consistent Query Translation"</em> indexed in IEEE Xplore.</p>
-                <p class="lang-zh">RAG 研究论文 <em>《HypoSelectSimRAG》</em> 在第六届计算机工程与智能控制国际会议发表并收录于 IEEE。</p>
+                <h3 class="timeline-heading">Paper Published in IEEE ICCEIC 2025</h3>
+                <p>Research paper <em>"HypoSelectSimRAG: Enhancing Answer Accuracy in RAG via Multi-Path Self-Consistent Query Translation"</em> indexed in IEEE Xplore.</p>
               </div>
             </div>
             <div class="timeline-item">
               <div class="timeline-dot"></div>
               <span class="timeline-time">2024 - 2025</span>
               <div class="timeline-body">
-                <h3 class="timeline-heading">
-                  <span class="lang-en">Macao Fok Ying Tung Foundation Scholarship</span>
-                  <span class="lang-zh">澳门霍英东基金会奖学金</span>
-                </h3>
-                <p class="lang-en">Recognized for top academic achievement (Top 5 in Computer Science, GPA 3.67/4.0).</p>
-                <p class="lang-zh">获评 2024-2025 学年澳门霍英东基金会奖学金（计算机专业前 5，GPA 3.67/4.0）。</p>
+                <h3 class="timeline-heading">Macao Fok Ying Tung Foundation Scholarship</h3>
+                <p>Recognized for top academic achievement (Top 5 in Computer Science, GPA 3.67/4.0).</p>
               </div>
             </div>
             <div class="timeline-item">
               <div class="timeline-dot"></div>
               <span class="timeline-time">2023.05 - 2023.08</span>
               <div class="timeline-body">
-                <h3 class="timeline-heading">
-                  <span class="lang-en">Shanghai Jiao Tong University (UM-SJTU JI)</span>
-                  <span class="lang-zh">上海交通大学密歇根学院暑期交流</span>
-                </h3>
-                <p class="lang-en">Completed intensive summer exchange coursework in engineering and computer science.</p>
-                <p class="lang-zh">赴上海交通大学密歇根学院参加暑期交流学习，完成高强度计算机与工程课程研讨。</p>
+                <h3 class="timeline-heading">Shanghai Jiao Tong University (UM-SJTU JI)</h3>
+                <p>Completed intensive summer exchange coursework in engineering and computer science.</p>
               </div>
             </div>
           </div>
@@ -254,7 +192,7 @@
         <section id="publications" class="content-section">
           <h2 class="section-title">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-            <span class="lang-en">Publications</span><span class="lang-zh">学术论文</span>
+            Publications
           </h2>
           
           <div class="publication-card">
@@ -266,20 +204,13 @@
               Z. Chen, <span class="pub-author-me">Hanqi Huang</span>, J. Wu, et al.
             </p>
             <p class="pub-venue">The 6th International Conference on Computer Engineering and Intelligent Control (ICCEIC 2025), IEEE</p>
-            <p class="pub-abstract lang-en">
+            <p class="pub-abstract">
               Retrieval-Augmented Generation (RAG) suffers from hallucination when queries deviate from domain corpus distributions. We proposed a multi-path hypothetical translation mechanism combined with temperature scaling (0.1 / 1.1) and vector similarity voting. On the 1,200-sample benchmark evaluated by RAGAS, Factual Correctness achieved <strong>0.6910</strong>, substantially outperforming standard RAG (0.5257) and HyDE (0.6178).
-            </p>
-            <p class="pub-abstract lang-zh">
-              针对传统 RAG 面临的用户查询分布偏差与检索幻觉，提出多路径虚拟文档生成与温度缩放（0.1 / 1.1）结合的自一致性相似度投票机制。在 rag-dataset-1200 基准集上，事实准确率提升至 <strong>0.6910</strong>，显著优于标准 RAG（0.5257）与 HyDE（0.6178）。
             </p>
             <div class="pub-actions">
               <a href="https://doi.org/10.1109/ICCEIC67916.2025.11309165" target="_blank" rel="noopener noreferrer" class="btn btn-primary">IEEE DOI Link</a>
-              <a href="assets/docs/HypoSelectSimRAG_Paper.pdf" target="_blank" class="btn btn-outline">
-                <span class="lang-en">PDF Full Text</span><span class="lang-zh">论文原文 (PDF)</span>
-              </a>
-              <a href="posts/hyposelect-simrag.html" class="btn btn-outline">
-                <span class="lang-en">Research Note</span><span class="lang-zh">技术深度解析</span>
-              </a>
+              <a href="assets/docs/HypoSelectSimRAG_Paper.pdf" target="_blank" class="btn btn-outline">PDF Full Text</a>
+              <a href="posts/hyposelect-simrag.html" class="btn btn-outline">Research Note</a>
             </div>
           </div>
         </section>
@@ -288,7 +219,7 @@
         <section id="education" class="content-section">
           <h2 class="section-title">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
-            <span class="lang-en">Education</span><span class="lang-zh">教育背景</span>
+            Education
           </h2>
           <div class="timeline">
             <!-- HKU -->
@@ -296,16 +227,9 @@
               <div class="timeline-dot"></div>
               <span class="timeline-time">2026.09 - 2027.08</span>
               <div class="timeline-body">
-                <h3 class="timeline-heading">
-                  <span class="lang-en">The University of Hong Kong (HKU)</span>
-                  <span class="lang-zh">香港大学 (HKU)</span>
-                </h3>
-                <p class="timeline-sub">
-                  <span class="lang-en">Master of Science in Computer Science · QS #11</span>
-                  <span class="lang-zh">计算机科学硕士 · QS 世界排名第 11</span>
-                </p>
-                <p class="lang-en">Two-year program completed one year ahead of schedule; focused on Artificial Intelligence, Machine Learning, and High-Performance Software Engineering.</p>
-                <p class="lang-zh">两年制硕士，提前一年修满学分。专注人工智能应用开发、分布式系统与高性能软件工程。</p>
+                <h3 class="timeline-heading">The University of Hong Kong (HKU)</h3>
+                <p class="timeline-sub">Master of Science in Computer Science · QS #11</p>
+                <p>Two-year program completed one year ahead of schedule; focused on Artificial Intelligence, Machine Learning, and High-Performance Software Engineering.</p>
               </div>
             </div>
 
@@ -314,23 +238,12 @@
               <div class="timeline-dot"></div>
               <span class="timeline-time">2022.08 - 2026.06</span>
               <div class="timeline-body">
-                <h3 class="timeline-heading">
-                  <span class="lang-en">Macao Polytechnic University (MPU)</span>
-                  <span class="lang-zh">澳门理工大学 (MPU)</span>
-                </h3>
-                <p class="timeline-sub">
-                  <span class="lang-en">Bachelor of Science in Computer Science · <strong>GPA 3.67 / 4.0 (Top 5)</strong></span>
-                  <span class="lang-zh">计算机科学学士 · <strong>GPA 3.67 / 4.0 (专业前 5)</strong></span>
-                </p>
-                <ul class="timeline-bullets lang-en">
+                <h3 class="timeline-heading">Macao Polytechnic University (MPU)</h3>
+                <p class="timeline-sub">Bachelor of Science in Computer Science · <strong>GPA 3.67 / 4.0 (Top 5)</strong></p>
+                <ul class="timeline-bullets">
                   <li><strong>Scholarship:</strong> 2024–2025 Macao Fok Ying Tung Foundation Scholarship.</li>
                   <li><strong>Honor:</strong> Huawei ICT Competition (Macao) Cloud Track Excellence Award.</li>
                   <li><strong>Languages:</strong> <strong>IELTS 7.0</strong>; CET-4 (583), CET-6 (491). Fluent in English, Cantonese, and Mandarin.</li>
-                </ul>
-                <ul class="timeline-bullets lang-zh">
-                  <li><strong>奖学金：</strong> 2024-2025 学年澳门霍英东基金会奖学金。</li>
-                  <li><strong>荣誉证书：</strong> 华为 ICT 比赛澳门赛区云赛道优秀奖。</li>
-                  <li><strong>语言能力：</strong> <strong>雅思 7 分</strong>；大学英语四级 583 分、六级 491 分；精通普通话、英语、粤语。</li>
                 </ul>
               </div>
             </div>
@@ -340,16 +253,9 @@
               <div class="timeline-dot"></div>
               <span class="timeline-time">2023.05 - 2023.08</span>
               <div class="timeline-body">
-                <h3 class="timeline-heading">
-                  <span class="lang-en">Shanghai Jiao Tong University (SJTU)</span>
-                  <span class="lang-zh">上海交通大学密歇根学院</span>
-                </h3>
-                <p class="timeline-sub">
-                  <span class="lang-en">UM-SJTU Joint Institute · Summer Exchange Program</span>
-                  <span class="lang-zh">暑期国际交流项目</span>
-                </p>
-                <p class="lang-en">Engaged in advanced technical coursework, team algorithmic problems, and cross-cultural academic seminars.</p>
-                <p class="lang-zh">修读工程与计算机基础进阶课程，参与团队算法协作与国际化学术研讨。</p>
+                <h3 class="timeline-heading">Shanghai Jiao Tong University (SJTU)</h3>
+                <p class="timeline-sub">UM-SJTU Joint Institute · Summer Exchange Program</p>
+                <p>Engaged in advanced technical coursework, team algorithmic problems, and cross-cultural academic seminars.</p>
               </div>
             </div>
           </div>
@@ -359,7 +265,7 @@
         <section id="internships" class="content-section">
           <h2 class="section-title">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-            <span class="lang-en">Internships & Industrial Experience</span><span class="lang-zh">实习与工作经历</span>
+            Internships & Industrial Experience
           </h2>
           <div class="timeline">
             <!-- Internship 1 -->
@@ -367,25 +273,13 @@
               <div class="timeline-dot"></div>
               <span class="timeline-time">2026.07 - 2026.08</span>
               <div class="timeline-body">
-                <h3 class="timeline-heading">
-                  <span class="lang-en">Full-Stack Engineer Intern · Shunde Rural Commercial Bank</span>
-                  <span class="lang-zh">顺德农村商业银行 · 全栈工程师</span>
-                </h3>
-                <p class="timeline-sub">
-                  <span class="lang-en">Project: Enterprise Green Finance Whitelist & Data Audit System</span>
-                  <span class="lang-zh">核心项目：企业金融绿色白名单管理与校验系统</span>
-                </p>
-                <ul class="timeline-bullets lang-en">
+                <h3 class="timeline-heading">Full-Stack Engineer Intern · Shunde Rural Commercial Bank</h3>
+                <p class="timeline-sub">Project: Enterprise Green Finance Whitelist & Data Audit System</p>
+                <ul class="timeline-bullets">
                   <li><strong>Streaming Data Ingestion:</strong> Replaced Apache POI with Alibaba EasyExcel to stream process bulk client spreadsheets, completely eliminating Java OutOfMemory (OOM) failures on large financial imports.</li>
                   <li><strong>Complex Query Optimization:</strong> Optimized 3-table cross-verification joins by profiling slow SQL execution plans and indexing high-frequency composite keys, dropping verification latency from seconds to milliseconds.</li>
                   <li><strong>Scheduled OSS Sync:</strong> Configured Spring Task cron jobs to automatically fetch, validate, and persist data from Alibaba Cloud OSS with retry mechanisms and structured audit logging.</li>
                   <li><strong>Tech Stack:</strong> React + Ant Design + SOFABoot + Redis + MySQL + Alibaba Cloud OSS.</li>
-                </ul>
-                <ul class="timeline-bullets lang-zh">
-                  <li><strong>高效数据处理：</strong> 白名单批量导入导出以 EasyExcel 替代传统 POI，流式读写解决大文件导入内存溢出（OOM）风险。</li>
-                  <li><strong>复杂业务查询优化：</strong> 交叉验证 3 张业务表。分析慢 SQL 执行计划为高频字段建立联合索引，响应时间降至毫秒级。</li>
-                  <li><strong>定时任务与数据同步：</strong> 基于 Spring Task 定期拉取并解析阿里云 OSS 中的 Excel 文件自动入库，配合异常重试与结构化日志保障最终一致性。</li>
-                  <li><strong>技术栈：</strong> React + Ant Design + SOFABoot + Redis + MySQL + 阿里云 OSS。</li>
                 </ul>
               </div>
             </div>
@@ -395,25 +289,13 @@
               <div class="timeline-dot"></div>
               <span class="timeline-time">2025.06 - 2025.08</span>
               <div class="timeline-body">
-                <h3 class="timeline-heading">
-                  <span class="lang-en">Backend & AI Engineer Intern · Foshan Dayan Data Technology</span>
-                  <span class="lang-zh">佛山市达衍数据科技有限公司 · 后端工程师、AI 开发</span>
-                </h3>
-                <p class="timeline-sub">
-                  <span class="lang-en">Project: Industrial AI Order Form Processing & Intelligent Email Agent System</span>
-                  <span class="lang-zh">核心项目：玻璃厂 AI 智能制单系统 & 外贸智能回复系统</span>
-                </p>
-                <ul class="timeline-bullets lang-en">
+                <h3 class="timeline-heading">Backend & AI Engineer Intern · Foshan Dayan Data Technology</h3>
+                <p class="timeline-sub">Project: Industrial AI Order Form Processing & Intelligent Email Agent System</p>
+                <ul class="timeline-bullets">
                   <li><strong>Heterogeneous Document Parsing:</strong> Designed a multi-tier parsing pipeline: pdfplumber extraction &rarr; OCR fallback &rarr; LLM structured normalization, bypassing heavy CV model training while handling formats from 8+ major manufacturers.</li>
                   <li><strong>Lightweight Microservice Architecture:</strong> Built Flask RESTful services tailored for low-maintenance factory intranet deployments, integrating end-to-end extraction, schema conversion, and database storage.</li>
                   <li><strong>Enterprise Knowledge Base & Agent:</strong> Deployed a private self-hosted Dify instance. Created prompt workflows using Few-Shot + Chain-of-Thought (CoT) to resolve technical abbreviations, boosting order creation efficiency by <strong>87.5%</strong>.</li>
                   <li><strong>Tech Stack:</strong> Flask + Dify Platform + DeepSeek API + pandas + numpy + pdfplumber + MySQL.</li>
-                </ul>
-                <ul class="timeline-bullets lang-zh">
-                  <li><strong>需求对接与方案选型：</strong> 面对历史数据少、版面多变的行业特点，放弃 CV 模型方案，选用 pdfplumber 先行、AI OCR 兜底、LLM 结构化抽取的灵活技术路线，兼顾识别准确率与泛化能力。</li>
-                  <li><strong>轻量化后端架构：</strong> 针对工业内网低运维特性选用 Flask 搭建轻量级后端服务，打通单据提取、格式规范化到数据持久化的完整闭环。</li>
-                  <li><strong>AI 后台与智能体：</strong> 私有化部署 Dify 平台保证数据安全；针对型号缩写与工艺映射构建专属知识库，结合 Few-Shot + CoT 提示词精准标准化输出，<strong>制单效率提升 87.5%</strong>（8小时缩减至1小时），可应对 8 个厂家不同格式输入。</li>
-                  <li><strong>技术栈：</strong> Flask + Dify + DeepSeek API + pandas + numpy + pdfplumber + MySQL。</li>
                 </ul>
               </div>
             </div>
@@ -424,14 +306,13 @@
         <section id="skills" class="content-section">
           <h2 class="section-title">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-            <span class="lang-en">Technical Skills & Toolkit</span><span class="lang-zh">专业技能与技术栈</span>
+            Technical Skills & Toolkit
           </h2>
           <div class="skills-container">
             <div class="skill-category">
               <div class="skill-cat-title">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-                <span class="lang-en">AI, Machine Learning & LLM Systems</span>
-                <span class="lang-zh">人工智能、机器学习与大模型开发</span>
+                AI, Machine Learning & LLM Systems
               </div>
               <div class="skill-tags">
                 <span class="skill-badge">LangChain</span>
@@ -448,8 +329,7 @@
             <div class="skill-category">
               <div class="skill-cat-title">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-                <span class="lang-en">Backend & Systems Engineering</span>
-                <span class="lang-zh">后端架构与系统工程</span>
+                Backend & Systems Engineering
               </div>
               <div class="skill-tags">
                 <span class="skill-badge">Python (Flask, FastAPI, Django)</span>
@@ -465,8 +345,7 @@
             <div class="skill-category">
               <div class="skill-cat-title">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 7 4 4 20 4 20 7"></polyline><line x1="9" y1="20" x2="15" y2="20"></line><line x1="12" y1="4" x2="12" y2="20"></line></svg>
-                <span class="lang-en">Frontend & UI Engineering</span>
-                <span class="lang-zh">前端开发与界面构建</span>
+                Frontend & UI Engineering
               </div>
               <div class="skill-tags">
                 <span class="skill-badge">Vue.js 3</span>
@@ -480,8 +359,7 @@
             <div class="skill-category">
               <div class="skill-cat-title">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                <span class="lang-en">Scientific Computing & Languages</span>
-                <span class="lang-zh">科研计算、语言与综合能力</span>
+                Scientific Computing & Languages
               </div>
               <div class="skill-tags">
                 <span class="skill-badge">ArchLinux & Ubuntu Server</span>
@@ -489,8 +367,8 @@
                 <span class="skill-badge">VASP & Pymatgen</span>
                 <span class="skill-badge">Git & GitHub Actions</span>
                 <span class="skill-badge">English (IELTS 7.0 / CET-4 583 / CET-6 491)</span>
-                <span class="skill-badge">Cantonese (粤语流利)</span>
-                <span class="skill-badge">Mandarin (普通话精通)</span>
+                <span class="skill-badge">Cantonese (Fluent)</span>
+                <span class="skill-badge">Mandarin (Native)</span>
               </div>
             </div>
           </div>
@@ -504,20 +382,17 @@
   <footer class="site-footer">
     <div class="container footer-content">
       <div>
-        &copy; 2026 Hanqi Huang (黄瀚祺). Hosted on GitHub Pages.
+        &copy; 2026 Hanqi Huang. Hosted on GitHub Pages.
       </div>
       <div class="footer-links">
         <a href="https://github.com/Hanson5732" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="mailto:huanghanqi1123@163.com">Email</a>
-        <a href="index.html">
-          <span class="lang-en">Home</span><span class="lang-zh">首页</span>
-        </a>
-        <a href="assets/docs/HUANG_Hanqi_CV.pdf" target="_blank" class="lang-en">CV</a>
-        <a href="assets/docs/HUANG_Hanqi_CV_CN.pdf" target="_blank" class="lang-zh">中文简历</a>
+        <a href="index.html">Home</a>
+        <a href="assets/docs/HUANG_Hanqi_CV.pdf" target="_blank">CV</a>
       </div>
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js?v=2.0"></script>
 </body>
 </html>
