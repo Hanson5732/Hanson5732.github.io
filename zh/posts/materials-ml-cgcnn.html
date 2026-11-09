@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>高通量 DFT + 晶体图神经网络（CGCNN）案例分析 | 黄瀚祺</title>
+  <meta name="description" content="黄瀚祺关于利用高通量第一性原理计算（DFT）与晶体图卷积神经网络（CGCNN）预测功能材料性质的技术专题解析。">
+  <link rel="icon" type="image/jpeg" href="../../assets/images/avatar.jpg?v=3.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css?v=2.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+</head>
+<body>
+
+  <!-- 顶部导航栏 -->
+  <header class="site-header">
+    <div class="container site-nav">
+      <a href="../index.html" class="nav-brand">
+        <img src="../../assets/images/avatar.jpg?v=3.0" alt="黄瀚祺" class="nav-avatar">
+        <div class="nav-title-group">
+          <span class="nav-name">黄瀚祺</span>
+          <span class="nav-sub">香港大学 CS</span>
+        </div>
+      </a>
+
+      <!-- 导航链接 -->
+      <ul class="nav-links" id="nav-links">
+        <li class="nav-link"><a href="../index.html">首页</a></li>
+        <li class="nav-link"><a href="../about.html">关于我</a></li>
+        <li class="nav-link"><a href="../projects.html">精选项目</a></li>
+        <li class="nav-link"><a href="../publications.html">学术成果</a></li>
+        <li class="nav-link active"><a href="../posts.html">文章笔记</a></li>
+        <li class="nav-link"><a href="../../assets/docs/HUANG_Hanqi_CV_CN.pdf" target="_blank">中文简历</a></li>
+      </ul>
+
+      <!-- 右侧控制区：语言切换 + 主题切换 + 移动端菜单 -->
+      <div class="nav-actions">
+        <div class="lang-pill" aria-label="语言切换">
+          <a href="../../posts/materials-ml-cgcnn.html" class="lang-pill-item" title="Switch to English">EN</a>
+          <span class="lang-pill-item active">中</span>
+        </div>
+        <button id="theme-toggle" class="nav-btn theme-toggle-btn" aria-label="切换深色模式">
+          <span id="theme-icon"></span>
+        </button>
+        <button id="mobile-menu-btn" class="nav-btn mobile-menu-btn" aria-label="展开导航菜单">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 文章主体容器 -->
+  <main class="container" style="padding-top: 2rem; padding-bottom: 5rem;">
+    <div class="article-content">
+      
+      <div style="margin-bottom: 1.5rem;">
+        <a href="../posts.html" style="font-size:0.9rem; font-weight:600;">&larr; 返回所有文章</a>
+      </div>
+
+      <header class="article-header" style="padding-top: 0;">
+        <div class="post-meta" style="margin-bottom: 0.75rem;">
+          <span>发表时间：2026 年 4 月</span>
+          <span>·</span>
+          <span>材料信息学与超算</span>
+          <span>·</span>
+          <span style="color:var(--primary); font-weight:600;">超算集群与图神经网络</span>
+        </div>
+        <h1 class="article-title">高通量 DFT + 晶体图神经网络（CGCNN）：预测功能晶体的电子与热力学性质</h1>
+        <p style="font-size: 1.05rem; color: var(--text-light); font-style: italic;">
+          作者：<strong>黄瀚祺</strong>，澳门理工大学计算机科学毕业设计
+        </p>
+      </header>
+
+      <article>
+        <h2>1. 研究背景与核心动机</h2>
+        <p>
+          基于密度泛函理论（Density Functional Theory, DFT）的第一性原理计算能够以量子力学级精度预测固态物质的物理与化学性质。然而，高保真度 DFT 计算流程（包括晶体结构弛豫、静态自洽场迭代、能带结构计算以及分波态密度分析）极其耗费超算核心机时与计算资源。
+        </p>
+        <p>
+          为了显著加速新能源、光电及半导体功能材料的理性筛选与反向设计，我们搭建了自动化的高通量计算与机器学习协同框架，系统对比了<strong>晶体图卷积神经网络（CGCNN）</strong>与基于特征工程的表格机器学习模型（如 <strong>XGBoost</strong>、<strong>随机森林 Random Forest</strong>）在材料多维度物性上的拟合能力与理论机制差异。
+        </p>
+
+        <h2>2. 自动化高通量计算流水线</h2>
+        <p>
+          我们在基于 ArchLinux 的超算集群环境下，使用 <strong>VASP</strong> 与 <strong>Pymatgen</strong> 调度并构建了严密的四阶段自动化高通量计算流水线：
+        </p>
+        <ol>
+          <li><strong>结构弛豫（Structural Relaxation）：</strong> 执行高精度的晶胞晶格与离子位置联合优化，采用严格的能量与离子步收敛判据（$10^{-5} \text{ eV}$）。</li>
+          <li><strong>静态自洽场计算（Static SCF）：</strong> 在高密度 Monkhorst-Pack $k$ 点网格下计算精确的电子电荷密度分布与总基态能量。</li>
+          <li><strong>能带结构计算（Band Structure Calculations）：</strong> 沿第一布里渊区高对称 $k$ 点路径进行密集能量本征值采样。</li>
+          <li><strong>态密度分析（Density of States, DOS）：</strong> 在费米能级窗口附近离散积分并确定导带底、价带顶与费米面能态分布。</li>
+        </ol>
+        <p>
+          最终构建了包含 2,598 种钙钛矿（Perovskite）及 Heusler 合金的高保真晶体结构数据集，均具备完整且经严格物理检验的电子与热力学基准标签。
+        </p>
+
+        <h2>3. 机器学习模型架构与核心发现</h2>
+        <p>
+          我们将晶体晶胞抽象构建为多重图（Multigraph）：节点表征原子的化学元素与电子态特征，边则编码晶格周期性空间下原子间的距离与相对位移矢量。
+        </p>
+
+        <!-- 移动端自适应表格容器 -->
+        <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1.5rem 0; width: 100%;">
+          <table style="width: 100%; min-width: 500px; border-collapse: collapse; font-size: 0.92rem; text-align: left; background: var(--card-bg); border-radius: 8px; border: 1px solid var(--border-color);">
+            <thead>
+              <tr style="border-bottom: 2px solid var(--border-color); background: var(--card-subtle);">
+                <th style="padding: 10px 14px;">目标物理性质</th>
+                <th style="padding: 10px 14px;">最优模型</th>
+                <th style="padding: 10px 14px;">拟合优度 $R^2$</th>
+                <th style="padding: 10px 14px;">平均绝对误差 (MAE)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: 10px 14px;">费米能级 ($E_F$)</td>
+                <td style="padding: 10px 14px;"><strong>CGCNN</strong></td>
+                <td style="padding: 10px 14px; color: var(--primary);"><strong>0.9635</strong></td>
+                <td style="padding: 10px 14px;">0.182 eV</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: 10px 14px;">带隙 ($E_g$)</td>
+                <td style="padding: 10px 14px;"><strong>CGCNN</strong></td>
+                <td style="padding: 10px 14px; color: var(--primary);"><strong>0.9584</strong></td>
+                <td style="padding: 10px 14px;">0.124 eV</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: 10px 14px;">形成能 (Formation Energy)</td>
+                <td style="padding: 10px 14px;"><strong>XGBoost (OFM)</strong></td>
+                <td style="padding: 10px 14px; color: var(--primary);"><strong>0.9860</strong></td>
+                <td style="padding: 10px 14px;">0.041 eV/atom</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>核心科学洞见：模型架构的“物性专精化”</h3>
+        <p>
+          结合轨道场矩阵（Orbital Field Matrix, OFM）的特征重要性归因分析揭示了晶体物性内在物理机理：
+        </p>
+        <blockquote class="quote-box">
+          <strong>电子性质</strong>（如费米能级与带隙）高度依赖于晶体的全局晶格拓扑对称性与长程空间能级杂化，使得保留空间对称性的图卷积神经网络（CGCNN）展现出压倒性的表征优势；相反，<strong>热力学稳定性</strong>（如形成能）主要由局域近邻原子的化学键焓变与局域轨道重叠主导，结合物理描述符的梯度提升决策树（XGBoost）能够以极快的训练速度达到极致的预测精度。
+        </blockquote>
+
+        <h2>4. 总结与相关资料</h2>
+        <p>
+          本项研究表明，将领域专精的晶体图表示学习与高效表格机器学习模型有机杂化，能够在坚守物理化学准确性的前提下，实现材料发现与性能预测效率的数个数量级飞跃。
+        </p>
+        <div style="display:flex; flex-wrap:wrap; gap:0.6rem; margin-top:1.5rem;">
+          <a href="../../assets/docs/Materials_ML_Paper.pdf" target="_blank" class="btn btn-primary">下载毕业论文 / 原文 (PDF)</a>
+          <a href="../projects.html" class="btn btn-outline">浏览其他精选项目</a>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- 网站页脚 -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div>
+        &copy; 2026 黄瀚祺 (Hanqi Huang). Hosted on GitHub Pages.
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/Hanson5732" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:huanghanqi1123@163.com">邮箱</a>
+        <a href="../about.html">关于我</a>
+        <a href="../../assets/docs/HUANG_Hanqi_CV_CN.pdf" target="_blank">中文简历</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js?v=2.0"></script>
+</body>
+</html>

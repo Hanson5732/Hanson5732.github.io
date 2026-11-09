@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HypoSelectSimRAG 深度解析 | 黄瀚祺</title>
+  <meta name="description" content="黄瀚祺及其合作者发表于 IEEE ICCEIC 2025 的学术论文 HypoSelectSimRAG 技术深度解析。">
+  <link rel="icon" type="image/jpeg" href="../../assets/images/avatar.jpg?v=3.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css?v=2.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+</head>
+<body>
+
+  <!-- 顶部导航栏 -->
+  <header class="site-header">
+    <div class="container site-nav">
+      <a href="../index.html" class="nav-brand">
+        <img src="../../assets/images/avatar.jpg?v=3.0" alt="黄瀚祺" class="nav-avatar">
+        <div class="nav-title-group">
+          <span class="nav-name">黄瀚祺</span>
+          <span class="nav-sub">香港大学 CS</span>
+        </div>
+      </a>
+
+      <!-- 导航链接 -->
+      <ul class="nav-links" id="nav-links">
+        <li class="nav-link"><a href="../index.html">首页</a></li>
+        <li class="nav-link"><a href="../about.html">关于我</a></li>
+        <li class="nav-link"><a href="../projects.html">精选项目</a></li>
+        <li class="nav-link"><a href="../publications.html">学术成果</a></li>
+        <li class="nav-link active"><a href="../posts.html">文章笔记</a></li>
+        <li class="nav-link"><a href="../../assets/docs/HUANG_Hanqi_CV_CN.pdf" target="_blank">中文简历</a></li>
+      </ul>
+
+      <!-- 右侧控制区：语言切换 + 主题切换 + 移动端菜单 -->
+      <div class="nav-actions">
+        <div class="lang-pill" aria-label="语言切换">
+          <a href="../../posts/hyposelect-simrag.html" class="lang-pill-item" title="Switch to English">EN</a>
+          <span class="lang-pill-item active">中</span>
+        </div>
+        <button id="theme-toggle" class="nav-btn theme-toggle-btn" aria-label="切换深色模式">
+          <span id="theme-icon"></span>
+        </button>
+        <button id="mobile-menu-btn" class="nav-btn mobile-menu-btn" aria-label="展开导航菜单">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 文章主体容器 -->
+  <main class="container" style="padding-top: 2rem; padding-bottom: 5rem;">
+    <div class="article-content">
+      
+      <div style="margin-bottom: 1.5rem;">
+        <a href="../posts.html" style="font-size:0.9rem; font-weight:600;">&larr; 返回所有文章</a>
+      </div>
+
+      <header class="article-header" style="padding-top: 0;">
+        <div class="post-meta" style="margin-bottom: 0.75rem;">
+          <span>发表时间：2025 年 10 月</span>
+          <span>·</span>
+          <span>IEEE ICCEIC 2025</span>
+          <span>·</span>
+          <span style="color:var(--primary); font-weight:600;">检索增强生成 (RAG)</span>
+        </div>
+        <h1 class="article-title">HypoSelectSimRAG: 基于多路径自一致性查询转换提高 RAG 答案精度</h1>
+        <p style="font-size: 1.05rem; color: var(--text-light); font-style: italic;">
+          作者：龙坤良、<strong>黄瀚祺</strong>、赵翔宇 等
+        </p>
+      </header>
+
+      <article>
+        <h2>1. 传统 RAG 与 HyDE 面临的瓶颈</h2>
+        <p>
+          传统的检索增强生成（Standard RAG）高度依赖直接从用户原始查询（raw query）计算得到的稠密向量（dense vector）进行相似度检索。然而在实际场景中，用户往往使用口语化、信息不完整或带有歧义的措辞表达复杂的检索需求。此时，查询向量在嵌入空间中会严重偏离专业文档的分布空间，导致检索召回大量无关噪声上下文，进而诱发大语言模型（LLM）生成严重的虚假信息与幻觉。
+        </p>
+        <p>
+          假设文档嵌入（Hypothetical Document Embeddings, HyDE）尝试通过让 LLM 在检索前先生成一份“假设性回答文档”来桥接查询与文档空间的鸿沟。但单路径假设文档具有极高的随机方差：一旦 LLM 在生成假设文档时产生幻觉，整个检索系统将被误导向完全错误的语义方向。
+        </p>
+
+        <h2>2. 我们的方案：HypoSelectSimRAG</h2>
+        <p>
+          为打破对单一生成路径的脆弱依赖并保证语义锚定，我们提出了 <strong>HypoSelectSimRAG</strong> 框架。其核心架构由以下三大模块组成：
+        </p>
+        <ul>
+          <li><strong>多路径虚拟文档生成（Multi-Path Generation）：</strong> 我们设计了两种提示策略（少样本提示 Few-Shot Prompting 与面向问题分类的提示 Question-Classification Prompting），分别结合双重解码温度（$T=0.1$ 用于保障确定性与精准聚焦，$T=1.1$ 用于激发探索性多样性），构建出 4 条互补的候选假设文档生成路径。</li>
+          <li><strong>自一致性候选筛选（Candidate Selection）：</strong> 我们系统性设计并对比了 5 种文档选择策略：自一致性投票（Self-Consistency Voting）、打分机制（Scoring）、摘要聚合（Summary Aggregation）、平均向量（Average Vector）以及<em>最优相似度向量（Best Vector）</em>。</li>
+          <li><strong>相似度对齐稠密检索（Similarity-Aligned Dense Retrieval）：</strong> 选取与原始查询余弦相似度最高的最优候选文档（Best Vector candidate）投入向量检索器，在本地或分布式向量数据库中完成精准召回。</li>
+        </ul>
+
+        <h2>3. RAGAS 基准评测实验结果</h2>
+        <p>
+          我们在标准评测基准 <code>rag-dataset-1200</code> 上展开全面评估，利用 <strong>RAGAS</strong>（Retrieval Augmented Generation Assessment）评测套件，从事实准确度（Factual Correctness）、语义相似度（Answer Semantic Similarity）与上下文相关性（Context Relevance）三个核心维度进行打分。
+        </p>
+
+        <!-- 移动端自适应表格容器 -->
+        <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1.5rem 0; width: 100%;">
+          <table style="width: 100%; min-width: 500px; border-collapse: collapse; font-size: 0.92rem; text-align: left; background: var(--card-bg); border-radius: 8px; border: 1px solid var(--border-color);">
+            <thead>
+              <tr style="border-bottom: 2px solid var(--border-color); background: var(--card-subtle);">
+                <th style="padding: 10px 14px;">方法</th>
+                <th style="padding: 10px 14px;">事实准确度 (Factual Correctness) &uarr;</th>
+                <th style="padding: 10px 14px;">语义相似度 (Semantic Similarity) &uarr;</th>
+                <th style="padding: 10px 14px;">上下文相关性 (Context Relevance) &uarr;</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: 10px 14px;">传统标准 RAG (Naive RAG)</td>
+                <td style="padding: 10px 14px;">0.5257</td>
+                <td style="padding: 10px 14px;">0.8124</td>
+                <td style="padding: 10px 14px;">0.5620</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: 10px 14px;">HyDE</td>
+                <td style="padding: 10px 14px;">0.6178</td>
+                <td style="padding: 10px 14px;">0.8492</td>
+                <td style="padding: 10px 14px;">0.6350</td>
+              </tr>
+              <tr style="background: var(--primary-light); font-weight: 600;">
+                <td style="padding: 10px 14px;"><strong>HypoSelectSimRAG (本文方法)</strong></td>
+                <td style="padding: 10px 14px; color: var(--primary);"><strong>0.6910</strong></td>
+                <td style="padding: 10px 14px; color: var(--primary);"><strong>0.8872</strong></td>
+                <td style="padding: 10px 14px; color: var(--primary);"><strong>0.7180</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          实验结果表明，HypoSelectSimRAG 相比于传统标准 RAG 在<strong>事实准确度上获得了显著的 +31.4% 相对提升</strong>，并全方位超越了单路径 HyDE 方法。
+        </p>
+
+        <h2>4. 工程实现与论文获取</h2>
+        <p>
+          该技术流水线基于 Python 与 <strong>LangChain</strong> 框架实现，全流程接入 <strong>LangSmith</strong> 进行 Token 追踪与调用链路监控，并在完整的消融实验集上完成了严格的鲁棒性验证。
+        </p>
+        <div style="display:flex; flex-wrap:wrap; gap:0.6rem; margin-top:1.5rem;">
+          <a href="https://doi.org/10.1109/ICCEIC67916.2025.11309165" target="_blank" rel="noopener noreferrer" class="btn btn-primary">IEEE 论文官方链接 (DOI)</a>
+          <a href="../../assets/docs/HypoSelectSimRAG_Paper.pdf" target="_blank" class="btn btn-outline">下载论文原文 (PDF)</a>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- 网站页脚 -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div>
+        &copy; 2026 黄瀚祺 (Hanqi Huang). Hosted on GitHub Pages.
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/Hanson5732" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:huanghanqi1123@163.com">邮箱</a>
+        <a href="../about.html">关于我</a>
+        <a href="../../assets/docs/HUANG_Hanqi_CV_CN.pdf" target="_blank">中文简历</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js?v=2.0"></script>
+</body>
+</html>
